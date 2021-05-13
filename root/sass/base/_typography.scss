@@ -1,0 +1,53 @@
+
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:1.7;
+    color: $primary-grey-dark;
+    padding:30px;
+    
+
+}
+
+
+
+
+
+
+
+//code is fot the heading in the homepage header
+.heading-primary{
+    color: $primary-white;
+    text-transform: uppercase;
+   backface-visibility: hidden;
+   margin-bottom: 60px;
+
+
+   &-main{ 
+    display: block;
+    font-size:60px;
+    font-weight: 400;
+    letter-spacing:35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function:ease-out;
+    /* animation-delay: 3s; 
+        animation-iteration-count:1; --> how many times the animation will happen
+    
+    */
+
+}
+&-sub{
+    display: block;
+    font-size:20px;
+    font-weight: 700;
+    letter-spacing:10px;
+    animation: moveInRight 1s ease-in;
+
+}
+
+}
+
+

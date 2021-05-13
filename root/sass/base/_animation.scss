@@ -1,0 +1,44 @@
+//animation for the Heading in the home page
+@keyframes moveInLeft{
+    0%{
+        opacity: 0; /*staring time the element should be invisible.*/
+        transform: translateX(-100%);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0); /* 0 means what it exactly looks without animation*/
+    }
+}
+
+
+//animation for the homepage sub hading
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0; /*staring time the element should be invisible.*/
+        transform: translateX(100%);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0); /* 0 means what it exactly looks without animation*/
+    }
+}   
+
+//Animation for the button in the home page header
+@keyframes moveInButton{
+    0%{
+        opacity: 0; /*staring time the element should be invisible.*/
+        transform: translateY(100%);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0); /* 0 means what it exactly looks without animation*/
+    }
+}  

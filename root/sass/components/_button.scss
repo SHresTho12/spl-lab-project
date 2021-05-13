@@ -1,0 +1,63 @@
+/*pseudo classes on btn*/
+
+.btn{
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        /*when btn is visited*/
+        border-radius: 100px;
+        transition: all .2s;
+        position: relative;
+    }
+    &:hover{
+        transform:translateY(-3px);
+        /*when the btn in hovered*/
+        box-shadow: 0 5px 10px rgba(0,0,0,.2); /*  0 for x axis 10 for y and 20 for blur*/
+    
+    
+        //nested hover::after
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active{
+        transform: translateY(-1px);
+    }
+    &-white{
+        background-color:$primary-white;
+        color:$primary-grey-dark;
+    
+        &::after{
+            background-color:$primary-white;
+        }
+        
+    }
+    /*same element as before just visible after pseudo property. its treated as the child of the actual element */
+    &::after{
+        content:"";
+        display:inline-block;
+        height:100%;
+        width:100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition:all .4s;
+        
+    
+    }
+    
+    
+    
+    
+    &-animated{
+        animation: moveInButton .5s ease-out .75s;
+        animation-fill-mode: backwards; /*makes  the button invisible before the animation strarts*/
+    }
+    }
+    
