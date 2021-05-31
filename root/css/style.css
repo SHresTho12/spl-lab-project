@@ -7,7 +7,7 @@
   /*This means all the borders and paddings will not be added to the main width of the element */ }
 
 html {
-  font-size: 62.5%; }
+  font-size: 75%; }
 
 body {
   box-sizing: border-box; }
@@ -78,6 +78,45 @@ body {
     letter-spacing: 10px;
     animation: moveInRight 1s ease-in; }
 
+.heading-secondary {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56fc2, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem #075e21; }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  color: #28b485b6; }
+
+.paragraph {
+  font-size: 1.3rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
 /*pseudo classes on btn*/
 .btn {
   /*same element as before just visible after pseudo property. its treated as the child of the actual element */ }
@@ -89,7 +128,8 @@ body {
     /*when btn is visited*/
     border-radius: 100px;
     transition: all .2s;
-    position: relative; }
+    position: relative;
+    font-size: 1.3rem; }
   .btn:hover {
     transform: translateY(-3px);
     /*when the btn in hovered*/
@@ -121,6 +161,73 @@ body {
     animation-fill-mode: backwards;
     /*makes  the button invisible before the animation strarts*/ }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.3rem;
+  color: #28b485b6;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #28b485b6;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #28b485b6;
+  color: #fff;
+  box-shadow: 0 1rem 20px #6d6969;
+  transform: translateY(-2px);
+  border-radius: 1rem; }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 10px #6d6969;
+  transform: translateY(0px); }
+
+.composition {
+  position: relative; }
+  .composition-photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem #8f8c8c;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition-photo-p1 {
+      left: 0;
+      top: -2rem; }
+    .composition-photo-p2 {
+      right: 0;
+      top: 2rem; }
+    .composition-photo-p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition-photo:hover {
+      outline: 1.5rem solid #28b485b6;
+      transform: scale(1.05) translateY(-1rem);
+      box-shadow: 0 2.5rem 4 rem #8f8c8c;
+      z-index: 20; }
+  .composition:hover .composition-photo:not(:hover) {
+    transform: scale(0.9); }
+
+.row {
+  max-width: 110rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 5rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 5rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 5rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100%-2 * 5rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100%-2 * 5rem) / 3) + 5rem); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485b6), url(../images/homepageBackground.jpg);
@@ -143,3 +250,8 @@ body {
     /*It moves the element 50% of its own width to the left . It is not relative or absolute to its parent rather it moves relative to its center */
     /*as the btn element is a a element it is considered as a inline text element so you can center it with text decorations*/
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
