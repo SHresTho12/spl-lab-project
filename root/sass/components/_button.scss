@@ -37,6 +37,15 @@
         }
         
     }
+    &-green{
+        background-color:$color-primary;
+        color:$primary-white;
+    
+        &::after{
+            background-color:$color-primary;
+        }
+        
+    }
     /*same element as before just visible after pseudo property. its treated as the child of the actual element */
     &::after{
         content:"";
