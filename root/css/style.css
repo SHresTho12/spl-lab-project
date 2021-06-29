@@ -117,6 +117,15 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem; }
+
+.u-margin-top-huge {
+  margin-top: 10rem; }
+
 /*pseudo classes on btn*/
 .btn {
   /*same element as before just visible after pseudo property. its treated as the child of the actual element */ }
@@ -145,6 +154,11 @@ body {
     color: #777; }
     .btn-white::after {
       background-color: #fff; }
+  .btn-green {
+    background-color: #28b485b6;
+    color: #fff; }
+    .btn-green::after {
+      background-color: #28b485b6; }
   .btn::after {
     content: "";
     display: inline-block;
@@ -226,6 +240,91 @@ body {
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  background-color: #f7f7f7; }
+  .card-side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem #8a8888; }
+    .card-side-front {
+      background-color: #fff; }
+    .card-side-back {
+      transform: rotateY(-180deg); }
+      .card-side-back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card-side-back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485); }
+      .card-side-back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card-side-front {
+    transform: rotateY(180deg); }
+  .card:hover .card-side-back {
+    transform: rotateY(0deg); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #f7cd5c, #f1732e), url(../images/game-image.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485), url(../images/cartoon-image.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../images/game-1.jpeg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 15rem;
+    right: 1.5rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: .45rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #f1732e); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+
 .row {
   max-width: 110rem;
   margin: 0 auto; }
@@ -242,7 +341,7 @@ body {
   .row .col-1-of-2 {
     width: calc((100% - 5rem)/2); }
   .row .col-1-of-3 {
-    width: calc((100%-2 * 5rem) / 3); }
+    width: calc((100% - 2 * 5rem) / 3); }
   .row .col-2-of-3 {
     width: calc(2 * ((100%-2 * 5rem) / 3) + 5rem); }
   .row .col-1-of-4 {
@@ -255,6 +354,7 @@ body {
   background-position: top;
   /* what of the size of the view page the image will always start from the top and stay there */
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     position: absolute;
@@ -284,3 +384,8 @@ body {
   transform: skewY(-6deg); }
   .section-features > * {
     transform: skewY(6deg); }
+
+.section-games {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem; }
