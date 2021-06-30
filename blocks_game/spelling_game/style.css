@@ -1,0 +1,105 @@
+
+.letter
+{
+    /* background-color: blueviolet; */
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.picture
+{
+    height: 250px;
+    width: 250px;
+    left: 60%;
+    position: absolute;
+}
+.correct
+{
+    height: 80px;
+    width: 80px;
+    padding-bottom: 2px;
+    margin-left: 30px;
+}
+
+.cross
+{
+    height: 80px;
+    width: 80px;
+    padding-bottom: 2px;
+    margin-left: 30px;
+}
+
+.box
+{
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    margin: 5px; 
+    border-style: solid;
+    border: 5px black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+.hide 
+{
+    display: none;
+}
+
+.drag-over 
+{
+    border: dashed 3px red;
+}
+
+.button1_apple
+{
+    font-size: large;
+    border: 3px red;
+    background-color: bisque;
+    border-radius: 10pt;
+    margin-left: 15px;
+    margin-top: 5px;
+    height: 50px;
+    width: 80px;
+    box-shadow: 0 5px 6px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.button2_apple
+{
+    font-size: large;
+    border: 3px red;
+    background-color: bisque;
+    border-radius: 10pt;
+    margin-left: 15px;
+    margin-top: 5px;
+    height: 50px;
+    width: 80px;
+    box-shadow: 0 5px 6px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.button1_apple:hover
+{
+    background-color: black;
+    color: white
+}
+
+.button2_apple:hover
+{
+    background-color: black;
+    color: white
+}
+
+.button1_apple:active 
+{
+    transform: translateY(4px);
+}
+.button2_apple:active 
+{
+    transform: translateY(4px);
+}
