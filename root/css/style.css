@@ -46,6 +46,30 @@ body {
     transform: translate(0);
     /* 0 means what it exactly looks without animation*/ } }
 
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0; }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 10em; } }
+
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0); }
+  25% {
+    transform: rotate(-30deg); }
+  75% {
+    transform: rotate(30deg); } }
+
+@font-face {
+  font-family: "Creepy";
+  src: url("../Assests/Fonts/Creepy.woff") format("woff"), url("../Assets/Fonts/Creepy.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Lunacy";
+  src: url("../../Assests/Fonts/Lunacy.woff") format("woff"), url("../Assets/Fonts/Lunacy.woff2") format("woff2"); }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -104,6 +128,13 @@ body {
   font-size: 1.3rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.game-title {
+  color: #ff7730;
+  font-family: Creepy, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em; }
 
 .u-center-text {
   text-align: center; }
@@ -194,6 +225,26 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 10px #6d6969;
   transform: translateY(0px); }
+
+.hints-button .pushable {
+  background-color: brown;
+  border-radius: 50px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px; }
+
+.hints-button .front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  background-color: #851c1c;
+  color: white;
+  transform: translateY(-6px); }
+
+.hints-button .pushable:active .front {
+  transform: translateY(-2px); }
 
 .composition {
   position: relative; }
@@ -324,6 +375,55 @@ body {
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center; }
+
+.memory-card {
+  position: relative;
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  transition: all .8s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px; }
+  .memory-card-face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+    backface-visibility: hidden; }
+  .memory-card-back {
+    background-color: black;
+    border-color: #FF6D00; }
+  .memory-card-front {
+    background-color: #FFBB89;
+    border-color: #333;
+    transform: rotateY(180deg); }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s; }
+
+.memory-card.visible {
+  transform: rotateY(180deg); }
+
+.memory-card.hints-memory-card {
+  transform: rotateY(180deg); }
+
+.memory-card-front-face {
+  width: 12rem;
+  height: 18rem; }
+
+.memory-card-back-face {
+  width: 12rem;
+  height: 18rem;
+  backface-visibility: hidden;
+  overflow: hidden; }
+
+.memory-card.matched .memory-card-front .memory-card-value {
+  animation: dance 1s linear infinite 500ms; }
 
 .row {
   max-width: 110rem;
@@ -516,6 +616,39 @@ body {
   top: 0;
   transform: rotate(45deg); }
 
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #FF6D00;
+  font-family: Creepy, serif;
+  transition: background-color 500ms, font-size 500ms; }
+
+.overlay-text-small {
+  font-size: .3em; }
+
+.overlay-text.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards; }
+
+.game-info {
+  color: #e644e6;
+  font-family: fantasy,serif;
+  font-size: 4em; }
+
+.game-info-container {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -534,3 +667,15 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 100rem; }
+  .memory-game-body {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url(../images/MemoryGame/backgroundMemoryGame.jpg); }

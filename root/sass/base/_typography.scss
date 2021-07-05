@@ -1,4 +1,14 @@
+@font-face {
+    font-family: "Creepy";
+    src: url("../Assests/Fonts/Creepy.woff") format("woff"),
+         url("../Assets/Fonts/Creepy.woff2") format("woff2");
+}
 
+@font-face {
+    font-family: "Lunacy";
+    src: url("../../Assests/Fonts/Lunacy.woff") format("woff"),
+         url("../Assets/Fonts/Lunacy.woff2") format("woff2");
+}
 
 body{
     font-family: "Lato", sans-serif;
@@ -88,3 +98,14 @@ body{
     }
     
     }
+
+    //Design for memory game title
+    .game-title {
+        color: $color-secondary-dark;
+        font-family: Creepy, serif;
+        font-weight: normal;
+        text-align: center;
+        font-size: 6em;
+      }
+     
+      
