@@ -1,0 +1,13 @@
+.memory-game{
+   &-body{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image:url(../images/MemoryGame/backgroundMemoryGame.jpg);
+   }
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 100rem;
+}
