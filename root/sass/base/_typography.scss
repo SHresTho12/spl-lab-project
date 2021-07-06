@@ -105,7 +105,7 @@ body {
 .gaming-heading-primary {
     font-size: 10rem;
     text-transform: uppercase;
-    
+    display: block;
     text-align: center;
     height: 30vh;
     line-height: 30vh;
@@ -121,9 +121,7 @@ body {
         35px 35px 0px #c11a2b,
         40px 40px 0px #c11a2b,
         45px 45px 0px #c11a2b;
-        position: absolute;
-        top: 1rem;
-        left: 20rem;
+        
         animation: glowText 3s ease-in-out infinite alternate;
 }
 
