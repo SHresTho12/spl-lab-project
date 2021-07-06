@@ -62,6 +62,12 @@ body {
   75% {
     transform: rotate(30deg); } }
 
+@-webkit-keyframes glowText {
+  from {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b; }
+  to {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 10px #efa032, 15px 15px 20px #46b59b, 20px 20px 30px #017e7f, 25px 25px 40px #052939, 30px 30px 50px #c11a2b, 35px 35px 60px #c11a2b, 40px 40px 70px #c11a2b, 45px 45px 80px #c11a2b; } }
+
 @font-face {
   font-family: "Creepy";
   src: url("../Assests/Fonts/Creepy.woff") format("woff"), url("../Assets/Fonts/Creepy.woff2") format("woff2"); }
@@ -128,6 +134,21 @@ body {
   font-size: 1.3rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.gaming-heading-primary {
+  font-size: 10rem;
+  text-transform: uppercase;
+  text-align: center;
+  height: 30vh;
+  line-height: 30vh;
+  color: #fcedd8;
+  font-family: 'Niconne', cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b;
+  position: absolute;
+  top: 1rem;
+  left: 20rem;
+  animation: glowText 3s ease-in-out infinite alternate; }
 
 .game-title {
   color: #ff7730;
@@ -471,6 +492,11 @@ body {
     /*as the btn element is a a element it is considered as a inline text element so you can center it with text decorations*/
     text-align: center; }
 
+.gaming-header {
+  height: 30vh;
+  text-align: center;
+  position: relative; }
+
 .footer {
   background-color: #333;
   padding: 10rem 0;
@@ -679,3 +705,7 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
     background-image: url(../images/MemoryGame/backgroundMemoryGame.jpg); }
+
+.gaming-page-body {
+  background-image: url("../images/GamingPage/gamingPage-bg.jpg");
+  background-attachment: fixed; }

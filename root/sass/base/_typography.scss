@@ -1,23 +1,23 @@
 @font-face {
     font-family: "Creepy";
     src: url("../Assests/Fonts/Creepy.woff") format("woff"),
-         url("../Assets/Fonts/Creepy.woff2") format("woff2");
+        url("../Assets/Fonts/Creepy.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Lunacy";
     src: url("../../Assests/Fonts/Lunacy.woff") format("woff"),
-         url("../Assets/Fonts/Lunacy.woff2") format("woff2");
+        url("../Assets/Fonts/Lunacy.woff2") format("woff2");
 }
 
-body{
+body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height:1.7;
+    line-height: 1.7;
     color: $primary-grey-dark;
-    padding:30px;
-    
+    padding: 30px;
+
 
 }
 
@@ -28,84 +28,113 @@ body{
 
 
 //code is fot the heading in the homepage header
-.heading-primary{
+.heading-primary {
     color: $primary-white;
     text-transform: uppercase;
-   backface-visibility: hidden;
-   margin-bottom: 60px;
+    backface-visibility: hidden;
+    margin-bottom: 60px;
 
 
-   &-main{ 
-    display: block;
-    font-size:60px;
-    font-weight: 400;
-    letter-spacing:35px;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function:ease-out;
-    /* animation-delay: 3s; 
+    &-main {
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /* animation-delay: 3s; 
         animation-iteration-count:1; --> how many times the animation will happen
     
     */
 
-}
-&-sub{
-    display: block;
-    font-size:20px;
-    font-weight: 700;
-    letter-spacing:10px;
-    animation: moveInRight 1s ease-in;
+    }
+
+    &-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 10px;
+        animation: moveInRight 1s ease-in;
+
+    }
 
 }
 
-}
-
-.heading-secondary{
+.heading-secondary {
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
-    color:transparent;
+    color: transparent;
 
-    
-    
+
+
     letter-spacing: 2px;
-    transition:all .2s;
+    transition: all .2s;
 
-    &:hover{
+    &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);
         text-shadow: .5rem 1rem 2rem rgb(7, 94, 33);
     }
 }
 
-.heading-tertiary{
+.heading-tertiary {
     font-size: 1.6rem;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 2rem;
     text-decoration: underline;
     color: $color-primary;
-    }
-    
-    .paragraph{
+}
+
+.paragraph {
     font-size: $default-font-size;
-    
-    &:not(:last-child){
-    
-    margin-bottom: 3rem;
-    }
-    
+
+    &:not(:last-child) {
+
+        margin-bottom: 3rem;
     }
 
-    //Design for memory game title
-    .game-title {
-        color: $color-secondary-dark;
-        font-family: Creepy, serif;
-        font-weight: normal;
-        text-align: center;
-        font-size: 6em;
-      }
-     
-      
+}
+
+//Gaming Page Title design
+
+.gaming-heading-primary {
+    font-size: 10rem;
+    text-transform: uppercase;
+    
+    text-align: center;
+    height: 30vh;
+    line-height: 30vh;
+    color: #fcedd8;
+    font-family: 'Niconne', cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #eb452b,
+        10px 10px 0px #efa032,
+        15px 15px 0px #46b59b,
+        20px 20px 0px #017e7f,
+        25px 25px 0px #052939,
+        30px 30px 0px #c11a2b,
+        35px 35px 0px #c11a2b,
+        40px 40px 0px #c11a2b,
+        45px 45px 0px #c11a2b;
+        position: absolute;
+        top: 1rem;
+        left: 20rem;
+        animation: glowText 3s ease-in-out infinite alternate;
+}
+
+
+
+
+//Design for memory game title
+.game-title {
+    color: $color-secondary-dark;
+    font-family: Creepy, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+}
