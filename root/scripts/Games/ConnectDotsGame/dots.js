@@ -60,7 +60,7 @@ function checkForDot(event) { //when user clicks down on mouse, checks if user c
     for (; i < data.dots.length; i++) { //run a loop of dots to check whether or not it was on any of them
         var d = data.dots[i], //dot at current index
             c1 = { x: d.x, y: d.y, r: 10 }, //circle1 object
-            c2 = { x: e.pageX, y: e.pageY, r: 10 }; //circle2 object--touch
+            c2 = { x: event.pageX, y: event.pageY, r: 10 }; //circle2 object--touch
         if (circleCollision(c1, c2)) col = d; //check if the circles are colliding-- if colliding, set collision dot = dot at current index
     }
 
