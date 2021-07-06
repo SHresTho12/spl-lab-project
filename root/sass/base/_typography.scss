@@ -103,9 +103,11 @@ body {
 //Gaming Page Title design
 
 .gaming-heading-primary {
-    font-size: 10rem;
+    font-size: 8rem;
     text-transform: uppercase;
+
     display: block;
+
     text-align: center;
     height: 30vh;
     line-height: 30vh;
@@ -121,7 +123,7 @@ body {
         35px 35px 0px #c11a2b,
         40px 40px 0px #c11a2b,
         45px 45px 0px #c11a2b;
-        
+
         animation: glowText 3s ease-in-out infinite alternate;
 }
 
