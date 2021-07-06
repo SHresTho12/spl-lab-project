@@ -62,6 +62,12 @@ body {
   75% {
     transform: rotate(30deg); } }
 
+@-webkit-keyframes glowText {
+  from {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b; }
+  to {
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 10px #efa032, 15px 15px 20px #46b59b, 20px 20px 30px #017e7f, 25px 25px 40px #052939, 30px 30px 50px #c11a2b, 35px 35px 60px #c11a2b, 40px 40px 70px #c11a2b, 45px 45px 80px #c11a2b; } }
+
 @font-face {
   font-family: "Creepy";
   src: url("../Assests/Fonts/Creepy.woff") format("woff"), url("../Assets/Fonts/Creepy.woff2") format("woff2"); }
@@ -128,6 +134,21 @@ body {
   font-size: 1.3rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.gaming-heading-primary {
+  font-size: 10rem;
+  text-transform: uppercase;
+  text-align: center;
+  height: 30vh;
+  line-height: 30vh;
+  color: #fcedd8;
+  font-family: 'Niconne', cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b;
+  position: absolute;
+  top: 1rem;
+  left: 20rem;
+  animation: glowText 3s ease-in-out infinite alternate; }
 
 .game-title {
   color: #ff7730;
@@ -425,6 +446,84 @@ body {
 .memory-card.matched .memory-card-front .memory-card-value {
   animation: dance 1s linear infinite 500ms; }
 
+.game-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  background-color: #f7f7f7; }
+  .game-card-side {
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem #efa032; }
+    .game-card-side-front {
+      background-color: #fff; }
+    .game-card-side-back {
+      transform: rotateY(-180deg); }
+      .game-card-side-back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .game-card-side-back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485); }
+      .game-card-side-back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .game-card:hover .game-card-side-front {
+    transform: rotateY(180deg); }
+  .game-card:hover .game-card-side-back {
+    transform: rotateY(0deg); }
+  .game-card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .game-card__picture--1 {
+      background-image: url(../images/GamingPage/spellChecker.jpg); }
+    .game-card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485), url(../images/GamingPage/memoryCardGame.jpg); }
+    .game-card__picture--3 {
+      background-image: url(../images/GamingPage/connectDots.jpg); }
+  .game-card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 15rem;
+    right: 1.5rem;
+    width: 75%; }
+  .game-card__heading-span {
+    padding: .45rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .game-card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #f1732e); }
+    .game-card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .game-card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .game-card__details {
+    padding: 3rem; }
+    .game-card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .game-card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .game-card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+
 .row {
   max-width: 110rem;
   margin: 0 auto; }
@@ -470,6 +569,11 @@ body {
     /*It moves the element 50% of its own width to the left . It is not relative or absolute to its parent rather it moves relative to its center */
     /*as the btn element is a a element it is considered as a inline text element so you can center it with text decorations*/
     text-align: center; }
+
+.gaming-header {
+  height: 30vh;
+  text-align: center;
+  position: relative; }
 
 .footer {
   background-color: #333;
@@ -679,3 +783,10 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
     background-image: url(../images/MemoryGame/backgroundMemoryGame.jpg); }
+
+.gaming-page-body {
+  background-image: url("../images/GamingPage/gamingPage-bg.jpg");
+  background-attachment: fixed; }
+
+.gaming-header {
+  margin-bottom: 10px; }
