@@ -14,17 +14,22 @@
 @import "components/card";
 @import "components/memoryCard";
 @import "components/gameCard";
+@import "components/typingSettings";
+@import "components/input";
+@import "components/score";
 
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/navigation";
-@import "layout/overlayMemoryGame.scss";
+@import "layout/overlayMemoryGame";
 @import "layout/memoryGameInfo";
+@import "layout/typingGameContainer";
 
 @import "pages/home";
 @import "pages/memoryGame";
-@import "pages/gaming"
+@import "pages/gaming";
+@import "pages/typingGame";
 
 
 
