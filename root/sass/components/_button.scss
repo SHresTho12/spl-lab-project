@@ -240,3 +240,17 @@
           }
         }
       }
+
+      //typing test game
+
+      button{
+          cursor: pointer;
+          font-size: 14px;
+          border-radius: .4rem;
+          padding: .5rem 1.5rem;
+      }
+      .typing-settings-btn{
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+      }

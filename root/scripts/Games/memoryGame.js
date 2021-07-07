@@ -1,4 +1,4 @@
-// const cards = document.querySelectorAll(".memory-card");
+
 
 //audio controller for all kinds of moves and matches
 
