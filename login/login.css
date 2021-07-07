@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.background{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(kidsPlaying.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.form_modal{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background-color: beige;
+    /* padding: 5px; */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.button_box{
+    /* padding-top: 35px; */
+    width: 220px;
+    /* height: 15px; */
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 0 15px 9px #dbb7e2;
+}
+
+.toggle_button{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#sliding_btn{
+    top: 0px;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to left, #ff6810, #cd06ff);
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+/* .google_icon{
+    margin: 30px auto;
+    text-align: center;
+}
+
+.google_icon img{
+    width: 30px;
+    height: 30px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #604666;
+    cursor: pointer;
+    border-radius: 50%;
+} */
+
+.input_boxes{
+    top: 120px;
+    margin-left: 8px;
+    position: absolute;
+    width: 250px;
+    /* padding: 0spx 30px; */
+    transition: 0.4s;
+}
+
+.input_field{
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    padding: 10px 0px;
+    margin: 15px 5px;
+    /* border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px #999; */
+    /* border-radius: 10px; */
+    outline: none;
+}
+
+#emailforlogin{
+    margin-bottom: 50px;
+    
+}
+
+#paswordforlogin{
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+#emailforregister{
+    margin-bottom: 50px;
+}
+
+#passwordforreister{
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.submit_button{
+    width: 70%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 5px auto;
+    background: linear-gradient(to left, #ff6810, #cd06ff);
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+}
+
+.check_box{
+    /* margin: 100px 10px 100px 5px; */
+    margin-left: 50px;
+    margin-top: 140px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+}
+
+span{
+    color: #68036b;
+    font-size: 12px;
+    top: 140px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login{
+    left: 60px;
+}
+
+#register{
+    left: 460px;
+}
