@@ -1,3 +1,6 @@
+import jsonData from './jsonFile.json';
+console.log(jsonData);
+
 var data = { //global variable set equal to object
     canvas: null,
     ctx: null,
