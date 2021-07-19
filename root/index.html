@@ -17,7 +17,27 @@
 </head>
 
 <body>
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp</span>
+    </label>
+    <div class="navigation__background">&nbsp;</div>
+
+    <div class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="/login/login.html" class="navigation__link"><span>01</span>Sign In</a></li>
+            <li class="navigation__item"><a href="/login/login.html" class="navigation__link"><span>02</span>Sign Up</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Dash Board</a></li>
+            <li class="navigation__item"><a href="pages/Games/games.html" class="navigation__link"><span>04</span>Games</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Videos</a></li>
+            <li class="navigation__item"><a href="pages/Games/games.html" class="navigation__link"><span>06</span>Quizzes</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link"><span>07</span>Score Sheet</a></li>
+        </ul>
+    </div>
+
+</div>
     <header class="header">
         <div class="header__logo-box">
             <img src="images/logo-white.png" alt="Logo" class="header__logo">
@@ -78,7 +98,7 @@
                 <div class="col-1-of-4">
                     <div class="feature-box">
                         <i class="feature-box__icon icon-basic-world"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Explore Exciting Games</h3>
+                        <h3 class="heading-tertiary u-margin-bottom-small"><a href="pages/Games/games.html" >Explore Exciting Games</a></h3>
                         <p class="feature-box__text">
                             Fun games That will enhance your learning capability . Learning is now fun.
                         </p>
@@ -88,7 +108,7 @@
                 <div class="col-1-of-4">
                     <div class="feature-box">
                         <i class="feature-box__icon icon-basic-compass"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">Take Quizzes</h3>
+                        <h3 class="heading-tertiary u-margin-bottom-small"><a href="pages/Games/games.html" >Take Quizzes</a></h3>
                         <p class="feature-box__text">
                             Test your knowledge with beautiful test system. There is different kinds of testing method
                             for different child.
@@ -148,7 +168,7 @@
                     </div>
                     <div class="card-side card-side-back card-side-back-1">
                         <div class="card__cta">
-                        <a href="#" class="btn btn-white">Play Now</a>
+                        <a href="pages/Games/ConnectDotsGame/dots.html" class="btn btn-white">Play Now</a>
                         </div>
                     </div>
                   </div>
@@ -174,7 +194,7 @@
                         </div>
                         <div class="card-side card-side-back card-side-back-2">
                             <div class="card__cta">
-                            <a href="#" class="btn btn-white">Play Now</a>
+                            <a href="pages/Games/MemoryGame/memoryGame.html" class="btn btn-white">Play Now</a>
                             </div>
                         </div>
                   </div>
@@ -186,7 +206,7 @@
                                 &nbsp;
                             </div>
                             <h4 class="card__heading">
-                                <span class="card__heading-span card__heading-span--3">Remember The Set</span>
+                                <span class="card__heading-span card__heading-span--3">Drag and Drop</span>
                             </h4>
                             <div class="card__details">
                                 <ul>
@@ -200,7 +220,7 @@
                         </div>
                         <div class="card-side card-side-back card-side-back-3">
                             <div class="card__cta">
-                            <a href="#" class="btn btn-white">Play Now</a>
+                            <a href="/blocks_game/spelling_game/spelling_game.html" class="btn btn-white">Play Now</a>
                             </div>
                         </div>
                     </div>
@@ -209,7 +229,7 @@
         
 
             <div class="u-center-text u-margin-top-huge">
-                <a href="#" class="btn btn-green">Discover All Games</a>
+                <a href="pages/Games/games.html" class="btn btn-green">Discover All Games</a>
             </div>
 
         </section>
@@ -220,7 +240,23 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="../images/logo-white.png" alt="">
+            <img  src="images/logo-white.png" alt="" class="footer__logo">
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">About</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Privacy</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <p class="footer__copyright">
+                    This is a Project of Team 12 of SPL 1 !!!!!!!! By <br> <a href="" class="footer__link">Tasfia Barshat </a><br> <a href="" class="footer__link">Talimul Bari ShresTho </a><br> <a href="" class="footer__link"> Mumtahina Rahman</a> <br> . The design of the homescreen  is inspired from Jonas Schmedtman.
+                </p>
+            </div>
         </div>
     </footer>
 

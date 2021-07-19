@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body class="memory-game-body">
+  <h1 class="game-title">Mix-Or-Match</h1>
+  <div class="overlay-text visible">
+    Click to Start
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Time <span id="time-remaining">100</span>
+      </div>
+      <div class="game-info">
+        Score :<span id="score">00</span>
+      </div>
+      <div class="game-info">
+        Flips <span id="flips">0</span>
+      </div>
+    </div>
+    <div class="hints-button">
+
+      <button class="pushable" id="hint-button">
+        <span class="front">
+          Get Hint
+        </span>
+      </button>
+    </div>
+    <section class="memory-game">
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face  memory-card-value" src="../../../images/MemoryGame/a.jpg" alt="A" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value  memory-card-hint" src="../../../images/MemoryGame/a.jpg" alt="A" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+
+      <div class="memory-card hint">
+        <div class="memory-card-front memory-card-face ">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/h.jpg" alt="H" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card hint">
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/h.jpg" alt="H" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/e.jpg" alt="E" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/e.jpg" alt="E" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/j.jpg" alt="J" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/j.jpg" alt="J" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+
+      <div class="memory-card  hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/k.jpeg" alt="K" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card  hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/k.jpeg" alt="K" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+
+      <div class="memory-card  hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/m.jpg" alt="M" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+      <div class="memory-card  hint" >
+        <div class="memory-card-front memory-card-face">
+          <img class="memory-card-front-face memory-card-value" src="../../../images/MemoryGame/m.jpg" alt="M" />
+        </div>
+        <div class="memory-card-back memory-card-face">
+          <img class="memory-card-back-face" src="../../../images/MemoryGame/question.gif" alt="Question" />
+        </div>
+      </div>
+    </section>
+</body>
+<script src="../../../scripts/Games/memoryGame.js"></script>
+
+</html>
