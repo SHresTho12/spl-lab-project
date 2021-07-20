@@ -9,13 +9,16 @@
 <body background="../../../images/ConnectDotsGame/background1.jpg" bgproperties="fixed" style="background-size:cover">
 
     <canvas id="dots" width="400" height="300"></canvas>
+
+    <script type="text/javascript" src="../../../scripts/Games/ConnectDotsGame/dots.js"></script>
     <!--canvas element-->
-    <button onclick="prepCanvas(); drawDots();">Start game </button>
-
-    <script type="text/javascript" src="dots.js"></script>
+    <button id="strt">Start game </button>
 
 
-    <button onclick="displayLetter('../../../images/ConnectDotsGame/A.jpg', 150, 200);">Hint</button>
+    <script type="text/javascript" src="../../../dist/dots.js"></script>
+
+
+    <button id="hint">Hint</button>
     <script type="text/javascript" src="../../../dist/dots.js"></script>
     <a href="../ConnectDotsGame/dots.html"><button>Go back</button> </a>
     <br>

@@ -1,12 +1,16 @@
-import jsonData from './jsonFile.json';
-console.log(jsonData);
+//import jsonData from './jsonFile.json';
+/*
+var count = Object.keys(jsonData).length;
+//console.log(jsonData);
+console.log(count);
 
+console(Object.keys(jsonData)[1]);
+*/
 var data = { //global variable set equal to object
     canvas: null,
     ctx: null,
     clickedDot: null, //dot that was previously clicked--fromDot
     dots: [{ x: 200, y: 200 }, { x: 300, y: 200 }, { x: 220, y: 150 }, { x: 280, y: 150 }, { x: 250, y: 100 }] // letter A //array-dots variable
-        //in dots array objects with x and y properties
         // dots2: [{ x: 100, y: 100 }, { x: 200, y: 100 }, { x: 100, y: 200 }, { x: 200, y: 200 }] // shape rectangle
 };
 
@@ -42,6 +46,11 @@ function drawDots() { //draws the dots on the screen
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
     }
+}
+
+function startGame() {
+    prepCanvas();
+    drawDots();
 }
 
 function drawLine(toDot) { //drawing the line to toDot
@@ -83,4 +92,9 @@ function displayLetter(src, width, height) {
     img.height = height;
 
     document.body.appendChild(img);
+}
+
+window.onload = function() {
+    document.getElementById("strt").addEventListener("click", startGame);
+    document.getElementById("hint").onclick = displayLetter('../../../images/ConnectDotsGame/A.jpg', 150, 200);
 }
