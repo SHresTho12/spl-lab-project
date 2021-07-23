@@ -1,5 +1,5 @@
 module.exports = {
-	mode: 'production',
+	mode: 'development',
 	entry: {
 		memoryGame: ['./scripts/Games/memoryGame.js'],
 		dots: ['./scripts/Games/ConnectDotsGame/dots.js'],
