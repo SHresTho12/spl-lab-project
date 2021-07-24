@@ -1,14 +1,16 @@
 import numberJson from '../../../Assests/dotsGameResource/images_json/numbersJson.json';
 
 let resultArray;
+let actualObject;
 let score = 0;
 
-console.log(resultArray);
+
 // var count = Object.keys(jsonData).length;
 
 // console.log(count);
 var nextButton = document.getElementById('nextButton');
 var checkButton = document.getElementById('check');
+var scoreBar = document.getElementById('score');
 let dotsNumber = 0;
 var data = { //global variable set equal to object
     canvas: null,
@@ -21,7 +23,7 @@ var data = { //global variable set equal to object
 
 //creating the object that will hold result
 function resultObject(number){
-    resultArray = numberJson[number];
+    resultArray = JSON.parse(JSON.stringify(numberJson[number]));
     let length = Object.keys(resultArray).length;
     for(let i = 1 ; i<=length ; i++){
         let indexElement = 'v' + i.toString();
@@ -56,6 +58,7 @@ nextButton.addEventListener('click' , ()=> {
     prepCanvas();
     initilizeDots();
     drawDots();
+    data.clickedDot =null;
 } );
 
 
@@ -73,8 +76,11 @@ function circleCollision(c1, c2) { //finds whether or not two circles are collid
 
 function initilizeDots(){
      dotsNumber = Math.floor(Math.random() * 5) ;console.log(dotsNumber);
+     
+     actualObject = numberJson[dotsNumber];
+     
     data.dots = dotsIndex(numberJson[dotsNumber]);
-    resultObject(dotsNumber);
+     resultObject(dotsNumber);
     }
 
 function prepCanvas() { //setup resolution and size of canvas
@@ -112,19 +118,11 @@ function drawDots() { //draws the dots on the screen
 function scoreCount(dot1 , dot2){
 
 
+resultArray[dot1][dot2] = 1;
+console.log(resultArray[dot1][dot2]);
+resultArray[dot2][dot1] = 1;
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(resultArray);
 }
 
 //find the dots
@@ -143,11 +141,9 @@ function findDots(dot1 , dot2){
 
 
 function startGame() {
+    resetValues();
     
-    prepCanvas();
-    initilizeDots();
-    drawDots();
-    
+    score = 0;
     
 }
 
@@ -200,11 +196,31 @@ window.onload = function() {
 
 
 
-// function clear_canvas(){
+checkButton.addEventListener('click',()=>{
+    console.log(actualObject);
+    console.log(resultArray);
+    let length = Object.keys(resultArray).length;
+    for(let i = 1 ; i<=length ; i++){
+        let indexElement = 'v' + i.toString();
+        for(let j =1 ; j <=length ; j++){
+            let indexElement2 = 'v' + j.toString();
+            if(resultArray[indexElement][indexElement2] == actualObject[indexElement][indexElement2]) score++;
+            if(resultArray[indexElement][indexElement2] != actualObject[indexElement][indexElement2]) score--;
+        }
+    }
+    scoreBar.innerHTML = score;
 
-// // context.fillStyle 
-// context.clearRect(0 , 0 , data.canvas.height , data.canvas.width);
+   
+    resetValues();
+    
+})
 
-// context.fillRect(0 , 0 , data.canvas.height , data.canvas.width);
-
-// }
+function resetValues(){
+    
+    data.clickedDot =null;
+    resultArray = null;
+    actualObject = null;
+    prepCanvas();
+    initilizeDots();
+    drawDots();
+}
