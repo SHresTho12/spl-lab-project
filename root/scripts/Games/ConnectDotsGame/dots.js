@@ -75,7 +75,8 @@ function circleCollision(c1, c2) { //finds whether or not two circles are collid
 }
 
 function initilizeDots(){
-     dotsNumber = Math.floor(Math.random() * 5) ;console.log(dotsNumber);
+     dotsNumber =Math.floor(Math.random() * 5);
+     console.log(dotsNumber);
      
      actualObject = numberJson[dotsNumber];
      
@@ -88,11 +89,11 @@ function prepCanvas() { //setup resolution and size of canvas
         scale = 1 / res;
     data.canvas = document.getElementById('dots'); //dots canvas
     data.ctx = data.canvas.getContext('2d'); //context
-
-    data.canvas.width = window.innerWidth * res;
-    data.canvas.height = window.innerHeight * res;
-    data.canvas.style.width = window.innerWidth + 'px';
-    data.canvas.style.height = window.innerHeight + 'px';
+   
+    data.canvas.width =1900//window.innerWidth * res;
+    data.canvas.height = 600//window.innerHeight * res;
+    data.canvas.style.width =1900 +'px'//window.innerWidth + 'px';
+    data.canvas.style.height = 600+'px'//window.innerHeight + 'px';
     // console.log(data.canvas.height);
     data.ctx.scale(res, res);
     data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
@@ -166,7 +167,7 @@ function checkForDot(event) { //when user clicks down on mouse, checks if user c
         col = null; //collision dot (dot with which we collide)
     for (; i < data.dots.length; i++) { //run a loop of dots to check whether or not it was on any of them
         var d = data.dots[i], //dot at current index
-            c1 = { x: d.x, y: d.y, r: 10 }, //circle1 object
+            c1 = { x: d.x, y: d.y, r: 15 }, //circle1 object
             c2 = { x: event.pageX, y: event.pageY, r: 15 }; //circle2 object--touch
         if (circleCollision(c1, c2)) col = d; //check if the circles are colliding-- if colliding, set collision dot = dot at current index
     }
@@ -191,7 +192,7 @@ function displayLetter(src, width, height) {
 
 window.onload = function() {
     document.getElementById("strt").addEventListener("click", startGame);
-    document.getElementById("hint").onclick = displayLetter('../../../images/ConnectDotsGame/A.jpg', 150, 200);
+    // document.getElementById("hint").onclick = displayLetter('../../../images/ConnectDotsGame/A.jpg', 150, 200);
 }
 
 
