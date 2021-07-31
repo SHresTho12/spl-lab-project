@@ -90,10 +90,10 @@ function prepCanvas() { //setup resolution and size of canvas
     data.canvas = document.getElementById('dots'); //dots canvas
     data.ctx = data.canvas.getContext('2d'); //context
    
-    data.canvas.width =1900//window.innerWidth * res;
-    data.canvas.height = 600//window.innerHeight * res;
-    data.canvas.style.width =1900 +'px'//window.innerWidth + 'px';
-    data.canvas.style.height = 600+'px'//window.innerHeight + 'px';
+    data.canvas.width =1920//window.innerWidth * res;
+    data.canvas.height = 1080//window.innerHeight * res;
+    data.canvas.style.width =1920 +'px'//window.innerWidth + 'px';
+    data.canvas.style.height = 1080+'px'//window.innerHeight + 'px';
     // console.log(data.canvas.height);
     data.ctx.scale(res, res);
     data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
@@ -105,9 +105,10 @@ function drawDots() { //draws the dots on the screen
     var i = 0;
     for (; i < data.dots.length; i++) { //loop 
         var d = data.dots[i];
-
+        var width = (d.x/1920)*screen.width;
+        var height = (d.y/1080)*screen.height;
         data.ctx.beginPath(); //begin a new path
-        data.ctx.arc(d.x, d.y, 15, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
+        data.ctx.arc(width, height, 15, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
         data.ctx.fillStyle = '#28b485b6'; //grey color
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
@@ -167,6 +168,7 @@ function checkForDot(event) { //when user clicks down on mouse, checks if user c
         col = null; //collision dot (dot with which we collide)
     for (; i < data.dots.length; i++) { //run a loop of dots to check whether or not it was on any of them
         var d = data.dots[i], //dot at current index
+        
             c1 = { x: d.x, y: d.y, r: 15 }, //circle1 object
             c2 = { x: event.pageX, y: event.pageY, r: 15 }; //circle2 object--touch
         if (circleCollision(c1, c2)) col = d; //check if the circles are colliding-- if colliding, set collision dot = dot at current index
