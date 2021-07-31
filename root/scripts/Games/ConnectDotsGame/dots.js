@@ -90,10 +90,10 @@ function prepCanvas() { //setup resolution and size of canvas
     data.canvas = document.getElementById('dots'); //dots canvas
     data.ctx = data.canvas.getContext('2d'); //context
    
-    data.canvas.width =1920//window.innerWidth * res;
-    data.canvas.height = 1080//window.innerHeight * res;
-    data.canvas.style.width =1920 +'px'//window.innerWidth + 'px';
-    data.canvas.style.height = 1080+'px'//window.innerHeight + 'px';
+    data.canvas.width =screen.width//window.innerWidth * res;
+    data.canvas.height = screen.height//window.innerHeight * res;
+    data.canvas.style.width =screen.width +'px'//window.innerWidth + 'px';
+    data.canvas.style.height = screen.height+'px'//window.innerHeight + 'px';
     // console.log(data.canvas.height);
     data.ctx.scale(res, res);
     data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
