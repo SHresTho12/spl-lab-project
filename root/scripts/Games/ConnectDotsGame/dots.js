@@ -150,9 +150,13 @@ function startGame() {
 }
 
 function drawLine(toDot) { //drawing the line to toDot
+        var width = (data.clickedDot.x/1920)*screen.width;
+        var height = (data.clickedDot.y/1080)*screen.height;
+        var width2 = (toDot.x/1920)*screen.width;
+        var height2 = (toDot.y/1080)*screen.height;
     data.ctx.beginPath();
-    data.ctx.moveTo(data.clickedDot.x, data.clickedDot.y); //position of clickedDot(fromDot)
-    data.ctx.lineTo(toDot.x, toDot.y); //position of toDot
+    data.ctx.moveTo(width, height); //position of clickedDot(fromDot)
+    data.ctx.lineTo(width2, height2); //position of toDot
 
     data.ctx.lineWidth = 5;
     data.ctx.strokeStyle = '#777';
@@ -167,10 +171,13 @@ function checkForDot(event) { //when user clicks down on mouse, checks if user c
     var i = 0,
         col = null; //collision dot (dot with which we collide)
     for (; i < data.dots.length; i++) { //run a loop of dots to check whether or not it was on any of them
-        var d = data.dots[i], //dot at current index
-        
-            c1 = { x: d.x, y: d.y, r: 15 }, //circle1 object
-            c2 = { x: event.pageX, y: event.pageY, r: 15 }; //circle2 object--touch
+        var d = data.dots[i]; //dot at current index
+        var width = (d.x/1920)*screen.width;
+        var height = (d.y/1080)*screen.height;
+        var width2 = (event.pageX/1920)*screen.width;
+        var height2 = (event.pageY/1080)*screen.height;
+           var c1 = { x:width, y: height, r: 15 }, //circle1 object
+            c2 = { x: width2, y: height2, r: 15 }; //circle2 object--touch
         if (circleCollision(c1, c2)) col = d; //check if the circles are colliding-- if colliding, set collision dot = dot at current index
     }
 
