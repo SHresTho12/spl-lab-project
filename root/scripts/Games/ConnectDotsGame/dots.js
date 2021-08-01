@@ -3,7 +3,8 @@ import numberJson from '../../../Assests/dotsGameResource/images_json/numbersJso
 let resultArray;
 let actualObject;
 let score = 0;
-
+let edges = 0;
+let scaleofdevice = window.devicePixelRatio;
 
 // var count = Object.keys(jsonData).length;
 
@@ -29,6 +30,7 @@ function resultObject(number){
         let indexElement = 'v' + i.toString();
         for(let j =1 ; j <=length ; j++){
             let indexElement2 = 'v' + j.toString();
+            if( resultArray[indexElement][indexElement2] = 1) edges++;
             resultArray[indexElement][indexElement2] = 0;
         }
     }
@@ -42,10 +44,11 @@ function dotsIndex(arg){
     let length = Object.keys(arg).length;
     for(let i = 1 ; i <= length;i++){
         let indexElement = 'v' + i.toString();
-        
-        let index = {x:arg[indexElement].cx , y:arg[indexElement].cy };
+        var width = (arg[indexElement].cx/1920)*data.canvas.width, height = (arg[indexElement].cy/1080)*data.canvas.height;
+        let index = {x:width, y:height };
         dots.push(index);
     }
+    console.log(data.dots);
     return dots;
 
 }
@@ -75,7 +78,7 @@ function circleCollision(c1, c2) { //finds whether or not two circles are collid
 }
 
 function initilizeDots(){
-     dotsNumber =Math.floor(Math.random() * 5);
+     dotsNumber = Math.floor(Math.random() * 5);
      console.log(dotsNumber);
      
      actualObject = numberJson[dotsNumber];
@@ -90,13 +93,14 @@ function prepCanvas() { //setup resolution and size of canvas
     data.canvas = document.getElementById('dots'); //dots canvas
     data.ctx = data.canvas.getContext('2d'); //context
    
-    data.canvas.width =screen.width//window.innerWidth * res;
-    data.canvas.height = screen.height//window.innerHeight * res;
-    data.canvas.style.width =screen.width +'px'//window.innerWidth + 'px';
-    data.canvas.style.height = screen.height+'px'//window.innerHeight + 'px';
+    data.canvas.width =window.innerWidth * scale;
+    data.canvas.height =window.innerHeight * scale;
+    data.canvas.style.width =window.innerWidth *scale + 'px';
+    data.canvas.style.height = window.innerHeight * scale + 'px';
     // console.log(data.canvas.height);
     data.ctx.scale(res, res);
     data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
+        console.log(event.clientX,event.clientY);
         checkForDot(event);
     });
 }
@@ -105,10 +109,10 @@ function drawDots() { //draws the dots on the screen
     var i = 0;
     for (; i < data.dots.length; i++) { //loop 
         var d = data.dots[i];
-        var width = (d.x/1920)*screen.width;
-        var height = (d.y/1080)*screen.height;
+        //var width = (d.x/1920)*data.canvas.width;
+        //var height = (d.y/1080)*data.canvas.height;
         data.ctx.beginPath(); //begin a new path
-        data.ctx.arc(width, height, 15, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
+        data.ctx.arc(d.x, d.y, 15/scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
         data.ctx.fillStyle = '#28b485b6'; //grey color
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
@@ -133,8 +137,9 @@ function findDots(dot1 , dot2){
     let d1 ,d2;
     for(let i  = 1 ; i<= length ; i++){
         let indexElement = 'v' + i.toString();
-        if(dot1.x == resultArray[indexElement].cx && dot1.y == resultArray[indexElement].cy ) d1 = indexElement;
-        else if(dot2.x == resultArray[indexElement].cx && dot2.y == resultArray[indexElement].cy) d2 = indexElement;
+        var dotx = (resultArray[indexElement].cx/1920)*data.canvas.width,  doty = (resultArray[indexElement].cy/1080)*data.canvas.height;
+        if(dot1.x == dotx && dot1.y == doty ) d1 = indexElement;
+        else if(dot2.x == dotx && dot2.y == doty) d2 = indexElement;
     }
     console.log(d1,d2);
     scoreCount(d1,d2);
@@ -150,13 +155,10 @@ function startGame() {
 }
 
 function drawLine(toDot) { //drawing the line to toDot
-        var width = (data.clickedDot.x/1920)*screen.width;
-        var height = (data.clickedDot.y/1080)*screen.height;
-        var width2 = (toDot.x/1920)*screen.width;
-        var height2 = (toDot.y/1080)*screen.height;
     data.ctx.beginPath();
-    data.ctx.moveTo(width, height); //position of clickedDot(fromDot)
-    data.ctx.lineTo(width2, height2); //position of toDot
+   //var width = (data.canvas.width * clickedDot.x) /1920 , height = (data.canvas.height * clickedDot.y)/1080,width2 = (data.canvas.width * toDot.x) /1920 , height = (data.canvas.height * toDot.y) /1080;
+    data.ctx.moveTo(data.clickedDot.x, data.clickedDot.y); //position of clickedDot(fromDot)
+    data.ctx.lineTo(toDot.x, toDot.y); //position of toDot
 
     data.ctx.lineWidth = 5;
     data.ctx.strokeStyle = '#777';
@@ -171,13 +173,10 @@ function checkForDot(event) { //when user clicks down on mouse, checks if user c
     var i = 0,
         col = null; //collision dot (dot with which we collide)
     for (; i < data.dots.length; i++) { //run a loop of dots to check whether or not it was on any of them
-        var d = data.dots[i]; //dot at current index
-        var width = (d.x/1920)*screen.width;
-        var height = (d.y/1080)*screen.height;
-        var width2 = (event.pageX/1920)*screen.width;
-        var height2 = (event.pageY/1080)*screen.height;
-           var c1 = { x:width, y: height, r: 15 }, //circle1 object
-            c2 = { x: width2, y: height2, r: 15 }; //circle2 object--touch
+        var d = data.dots[i], //dot at current index
+            //width = (data.canvas.width * d.x)/1920,height = (data.canvas.height *d.y)/1080,
+            c1 = { x: d.x, y: d.y, r: 15/scaleofdevice }, //circle1 object
+            c2 = { x: event.clientX/scaleofdevice, y: event.clientY/scaleofdevice, r: 15/scaleofdevice}; //circle2 object--touch
         if (circleCollision(c1, c2)) col = d; //check if the circles are colliding-- if colliding, set collision dot = dot at current index
     }
 
@@ -218,7 +217,7 @@ checkButton.addEventListener('click',()=>{
             if(resultArray[indexElement][indexElement2] != actualObject[indexElement][indexElement2]) score--;
         }
     }
-    scoreBar.innerHTML = score;
+    scoreBar.innerHTML = Math.floor(score/edges * 10);
 
    
     resetValues();
