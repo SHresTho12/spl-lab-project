@@ -1,7 +1,6 @@
 {
   "name": "root",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -25,5 +24,6 @@
     "build": "webpack --watch"
   },
   "author": "Talimul",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }

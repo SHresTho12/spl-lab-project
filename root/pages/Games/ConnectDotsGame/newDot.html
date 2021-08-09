@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draw The ots</title>
+    <link rel="stylesheet" href="../../../css/newDots.css">
 </head>
 <body>
     <h1 class="dotsHeading">Draw The Dots</h1>
@@ -13,18 +14,20 @@
         <canvas class="dotsCanvas" id="dotCanvas"></canvas>
 
         <div class="tools">
-           <button type="button" class="dotsButton">Undo</button>
-           <button type="button" class="dotsButton">Clear</button>
-           
-
-           <div class="color-button" style="background: brown;"></div>
-           <div class="color-button" style="background: red;"></div>
-           <div class="color-button" style="background: green;"></div>
-        </div> 
+            <button type="button" class="dotsButton">Undo</button>
+            <button type="button" class="dotsButton" id="clearCanvas">Clear</button>
+            
+    
+            <div  class="color-button" style="background: brown;"></div>
+            <div  class="color-button" style="background: red;"></div>
+            <div class="color-button" style="background: green;"></div>
+            <input type="color" class="color-picker">
+            <input type="range" min="0" max="100" class="pen-range">
+         </div> 
 
     </div>
     
-
+    
 
 
 
