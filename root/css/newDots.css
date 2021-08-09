@@ -4,6 +4,7 @@ body{
     box-sizing: border-box;
     overflow: hidden;
     background: rgb(221, 205, 205);
+    position: absolute;
    /* background-image: url(../images/ConnectDotsGame/dotsGameBg2.jpg); */
 }
 .dotsCanvas{
@@ -15,6 +16,8 @@ body{
     justify-content: center;
     flex-direction: row;
     margin: 15px;
+    position: relative;
+    top:80%;
 
 }
 .tools .color-button{
