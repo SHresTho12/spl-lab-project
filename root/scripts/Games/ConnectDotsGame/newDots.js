@@ -1,6 +1,6 @@
 
-import numberJson from '../../../Assests/dotsGameResource/images_json/numbersJson.json';
 
+import numberJson from '../../../Assests/dotsGameResource/images_json/numbersJson.json';
 
 
 const canvas = document.getElementById("dotsCanvas");
@@ -18,7 +18,9 @@ var data = { //global variable set equal to object
         // dots2: [{ x: 100, y: 100 }, { x: 200, y: 100 }, { x: 100, y: 200 }, { x: 200, y: 200 }] // shape rectangle
         dots:null,
         is_drawing : false, 
+
         draw_color :"blue",
+
         drawing_width : "2"
 };
 
@@ -95,15 +97,18 @@ function prepCanvas() { //setup resolution and size of canvas
     data.canvas.addEventListener("touchmove", draw , false); 
     data.canvas.addEventListener("mousedown", start , false); 
     data.canvas.addEventListener("mousemove", draw , false); 
+
     data.canvas.addEventListener("touchend",stop,false);
     data.canvas.addEventListener("mouseup",stop,false);
     data.canvas.addEventListener("mouseout",stop,false);
+
     // console.log(data.canvas.height);
     //data.ctx.scale(res, res);
     // data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
     //     console.log(event.clientX,event.clientY);
     //     checkForDot(event);
     // });
+
 }
 
 
@@ -132,6 +137,11 @@ event.preventDefault();
 }
 
 
+
+
+
+
+
 function stop(event){
     if(data.is_drawing){
         data.ctx.stroke();
@@ -141,6 +151,7 @@ function stop(event){
     }
     event.preventDefault();
 }
+
 
 
 //Change the color of the drAWING
@@ -183,3 +194,9 @@ document.write('<img src="'+img+'"/>');
 prepCanvas();
 initilizeDots();
 drawDots();
+
+function change_color(element){
+    data.draw_color = element.style.background;
+}
+prepCanvas();
+
