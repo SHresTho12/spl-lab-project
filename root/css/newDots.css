@@ -17,7 +17,7 @@ body{
     flex-direction: row;
     margin: 15px;
     position: relative;
-    top:80%;
+    
 
 }
 .tools .color-button{
@@ -42,6 +42,7 @@ body{
     background:#222;
     font-weight: bold;
     margin: 0 10px;
+   
 }
 .color-picker{
     align-self: center;
@@ -54,5 +55,11 @@ body{
 .pen-range{
     align-self: center;
     height:50px;
+
+}
+.score_container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 
 }
