@@ -8,7 +8,7 @@ const apple_game = document.querySelector('.apple_game')
 // const orange_game = document.querySelector('.orange_game')
 const correct = document.querySelector('.correct');
 
-const b1_apple = document.querySelector('.button1_apple');
+const b1_apple = document.querySelector('.done_btn_apple');
 b1_apple.addEventListener('click', onclick_done_apple);
 
 
@@ -65,7 +65,8 @@ function goToNextLevel()
 {
     // if (done_button_clicked){
         while(level_count < total_level){
-            if(level_count === 1 && apple_done_btn_clicked === true){
+            //if(level_count === 1 && apple_done_btn_clicked === true){
+            if(level_count === 1){
                 document.querySelector('.apple_game').style.display = "none";
                 document.querySelector('.orange_game').style.display = "block";
                 level_count++;
@@ -116,6 +117,7 @@ function dragOver(e) {
     e.target.classList.add('drag-over');
 }
 function dragLeave(e) {
+    e.preventDefault();
     e.target.classList.remove('drag-over');
 }
 function drop(e) {

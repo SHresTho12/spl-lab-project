@@ -19,7 +19,9 @@
         
             <div class="apple_game">
                 <!-- <div class="picture"> -->
-                    <img id="apple" src="image/apple.png">
+                    <img class="correct hide" id="correct" src="image/goodjob.gif">
+                    <img class="referencePic" id="apple" src="image/apple.png">
+                    <!-- <img class="correct" id="correct" src="image/correct-logo.png"> -->
                 <!-- </div> -->
                 <div class="boxes_apple">
                     <div class="box" id="a"></div>
@@ -27,45 +29,72 @@
                     <div class="box" id="p2"></div>
                     <div class="box" id="l"></div>
                     <div class="box" id="e"></div>
-                <img class="correct hide" id="correct" src="image/correct-logo.png">
+        
+                <!-- <img class="correct hide" id="correct" src="image/correct-logo.png"> -->
+                <!-- <img class="correct hide" id="correct" src="image/goodjob.gif"> -->
                 <img class="cross hide" id="cross" src="image/cross.png">
                 </div>
-            <div class ="draggables">
+                <div class ="draggables_apple">
                 <img class="letter" id="item_p2" draggable="true" src="image/P.png">
                 <img class="letter" id="item_l" draggable="true" src="image/L.png">
                 <img class="letter" id="item_e" draggable="true" src="image/E.png">
                 <img class="letter" id="item_p1" draggable="true" src="image/P.png">
                 <img class="letter" id="item_a" draggable="true" src="image/A.png">
-            </div>
-            <h4>press "Done" after completing. </h4>
+                </div>
+                <!-- <h4>press "Done" after completing. </h4> -->
     
-            <div class="buttons">
-                <button class="button1_apple"> Done </button>
-            </div>
+                <!-- <div class="buttons"><button class="button1_apple"> Done </button></div> -->
             </div>
     
             <div class="orange_game hide">
-             <!-- <div class="header">  -->
-               
-                <!-- <img class="picture" id="orange" src="image/orange.png"> -->
-                <p >this is the orange game. level two</p>
-            <!-- </div>
-            
-            <h4>press "Done" after completing. </h4> -->
+                <img class="referencePic" id="orange" src="image/orange.png">
+                <div class="boxes_orange">
+                    <div class="box" id="o"></div>
+                    <div class="box" id="r"></div>
+                    <div class="box" id="a"></div>
+                    <div class="box" id="n"></div>
+                    <div class="box" id="g"></div>
+                    <div class="box" id="e"></div>
+                <!-- <img class="correct hide" id="correct" src="image/correct-logo.png">
+                <img class="cross hide" id="cross" src="image/cross.png"> -->
+                </div>
+                <div class ="draggables_orange">
+                <img class="letter" id="orange_e" draggable="true" src="image/E.png">
+                <img class="letter" id="orange_o" draggable="true" src="image/O.png">
+                <img class="letter" id="orange_n" draggable="true" src="image/N.png">
+                <img class="letter" id="orange_a" draggable="true" src="image/A.png">
+                <img class="letter" id="orange_g" draggable="true" src="image/G.png">
+                <img class="letter" id="orange_r" draggable="true" src="image/R.png">
+                </div>
+                <!-- <h4>press "Done" after completing. </h4> -->
     
-            <!-- <div class="buttons">
-                <button class="button1_orange"> Done </button>
-            
-            </div> -->
+                <div class="buttons"><button class="done_btn_orange"> Done </button></div>
             </div>
     
             <div class="car hide">
-            <p> this is the car game. level three.</p>
+                <img class="referencePic" id="car" src="image/car.jpg">
+                <div class="boxes_car">
+                    <div class="box" id="c"></div>
+                    <div class="box" id="a"></div>
+                    <div class="box" id="r"></div>
+                <!-- <img class="correct hide" id="correct" src="image/correct-logo.png">
+                <img class="cross hide" id="cross" src="image/cross.png"> -->
+                </div>
+                <div class ="draggables_car">
+                <img class="letter" id="car_a" draggable="true" src="image/A.png">
+                <img class="letter" id="car_r" draggable="true" src="image/C.png">
+                <img class="letter" id="car_c" draggable="true" src="image/R.png">
+                </div>
+                <!-- <h4>press "Done" after completing. </h4> -->
+    
+                <div class="buttons"><button class="done_btn_orange"> Done </button></div>
     
             </div>
     
-            <button class="next_btn" onclick="goToNextLevel()"> Next </button>
+            <!-- <button class="next_btn" onclick="goToNextLevel()"> Next </button> -->
         </div>
+        <button class="done_btn_apple"> Done </button>
+        <button class="next_btn" onclick="goToNextLevel()"> Next </button>
     </div>
 
 </body>

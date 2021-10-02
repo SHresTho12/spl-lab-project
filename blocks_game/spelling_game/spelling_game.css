@@ -18,7 +18,7 @@
     height: 550px;
     position: relative;
     margin: 3% auto;
-    background-color: beige;
+    background-color: white;
     border-radius: 20px;
     /* overflow: hidden; */
 }
@@ -40,13 +40,25 @@
     cursor: pointer;
 }
 
-.draggables{
+.draggables_apple{
     position: relative;
     margin: auto;
     left: 22%;
 }
 
-#apple
+.draggables_orange{
+    position: relative;
+    margin: auto;
+    left: 19%;
+}
+
+.draggables_car{
+    position: relative;
+    margin: auto;
+    left: 35%;
+}
+
+.referencePic
 {
     height: 250px;
     width: 250px;
@@ -55,8 +67,8 @@
 }
 .correct
 {
-    height: 80px;
-    width: 80px;
+    height: 160px;
+    width: 150px;
     padding-bottom: 2px;
     margin-left: 30px;
 }
@@ -73,6 +85,18 @@
     position: relative;
     margin: auto;
     left: 15%;
+}
+
+.boxes_orange{
+    position: relative;
+    margin: auto;
+    left: 8%;
+}
+
+.boxes_car{
+    position: relative;
+    margin: auto;
+    left: 30%;
 }
 
 .box
@@ -97,11 +121,12 @@
     border: dashed 3px red;
 }
 
-.button1_apple
+.done_btn_apple
 {
     font-size: large;
-    border: 3px red;
-    background-color: bisque;
+    margin-left: 10%; 
+    margin-top: 50%;
+    background-color: rgb(209, 233, 245);
     border-radius: 10pt;
     margin-left: 15px;
     margin-top: 5px;
@@ -114,7 +139,8 @@
 .next_btn
 {
     font-size: large;
-    border: 3px red;
+    margin-left: 70%; 
+    margin-top: 50%;
     background-color: bisque;
     border-radius: 10pt;
     margin-left: 15px;
@@ -125,7 +151,7 @@
     cursor: pointer;
 }
 
-.button1_apple:hover
+.done_btn_apple:hover
 {
     background-color: black;
     color: white
@@ -137,7 +163,7 @@
     color: white
 }
 
-.button1_apple:active 
+.done_btn_apple:active 
 {
     transform: translateY(4px);
 }
