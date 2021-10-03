@@ -4,6 +4,7 @@ import numberJson from '../../../Assests/dotsGameResource/images_json/numbersJso
 
 
 const canvas = document.getElementById("dotsCanvas");
+const downloadBtn = document.getElementById("downloadImg");
 let resultArray;
 let actualObject;
 let score = 0;
@@ -200,3 +201,25 @@ function change_color(element){
 }
 prepCanvas();
 
+
+
+//download the image of  the canvas
+
+downloadBtn.addEventListener('click',function(){
+
+
+    //only png
+    if(window.navigator.msSaveBlob){
+        window.navigator.msSaveBlob(data.canvas.msSaveBlob(),"canvas-image.png");
+       
+    }
+    else{
+        const a = document.createElement("a");
+        document.body.appendChild(a);
+        a.href = data.canvas.toDataURL();
+        a.download = "canvas-image.png";
+        a.click();
+        document.body.removeChild(a);
+
+    }
+});
