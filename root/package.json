@@ -2,7 +2,9 @@
   "name": "root",
   "version": "1.0.0",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "sass": "^1.37.5"
+  },
   "devDependencies": {
     "node-sass": "^6.0.0",
     "@babel/core": "^7.14.0",
