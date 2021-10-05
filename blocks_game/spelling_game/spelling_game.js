@@ -4,21 +4,22 @@ var score = 0;
 var level_count = 1;
 var total_level = 3;
 
+const letters = document.querySelectorAll('.letter');
+const boxes = document.querySelectorAll('.box');
+
 const apple_game = document.querySelector('.apple_game')
 // const orange_game = document.querySelector('.orange_game')
 const correct = document.querySelector('.correct');
 
-const b1_apple = document.querySelector('.done_btn_apple');
-b1_apple.addEventListener('click', onclick_done_apple);
 
 
-var apple_done_btn_clicked = false;
-function onclick_done_apple(e){ 
-    // if(count < boxes.length){
-    //     console.log("sorry, you have to spell the word.")
-    // }
-    // else {
-        console.log('done btn pressed');
+function onclick_done_apple(e){
+    count = 0; 
+    if(count < boxes.length){
+        console.log("sorry, you have to spell the word.")
+    }
+    else 
+    {
     apple_done_btn_clicked = true;
     console.log(count);
     for (let i = 0; i < boxes.length; i++) 
@@ -58,37 +59,91 @@ function onclick_done_apple(e){
         window.alert("your current score: " + score);
     }
     else cross.classList.remove('hide');
-    // }
+    }
 }
 
-function goToNextLevel()
-{
+function done(){
+    console.log('done btn pressed');
+    if(level_count === 1) onclick_done_apple();
+}
+
+function resetCurrentWord(e){
+    console.log("reset btn clicked");
+    if(level_count === 1){
+        for (let i = 0; i < boxes.length; i++){
+            boxes[i].removeChild();
+        }
+    }
+}
+
+function showHint(e){
+    console.log("hint btn clicked");
+    if(level_count === 1){
+        document.getElementById('.a_apple').appendChild('.item_a');
+        document.getElementById('.e_apple').appendChild('.item_e');
+    } 
+}
+
+function goToNextLevel(){
     // if (done_button_clicked){
         while(level_count < total_level){
-            //if(level_count === 1 && apple_done_btn_clicked === true){
             if(level_count === 1){
                 document.querySelector('.apple_game').style.display = "none";
                 document.querySelector('.orange_game').style.display = "block";
                 level_count++;
-                console.log("going to level" + level_count);
+                console.log("going to level " + level_count);
                 break;
             }
             if(level_count === 2){
                 document.querySelector('.orange_game').style.display = "none";
-                document.querySelector('.car').style.display = "block";
+                document.querySelector('.car_game').style.display = "block";
                 level_count++;
-                console.log("going to level" + level_count);
+                console.log("going to level " + level_count);
+                break;
+            }
+            if(level_count === 3){
+                document.getElementsByClassName('.car_game').style.display = "none";
+                document.getElementsByClassName('.rose_game').style.display = "block";
+                level_count++;
+                console.log("going to level " + level_count);
+                break;
+            }
+            if(level_count === 4){
+                document.getElementsByClassName('.rose').style.display = "none";
+                document.getElementsByClassName('.tree').style.display = "block";
+                level_count++;
+                console.log("going to level " + level_count);
+                break;
+            }
+            if(level_count === 5){
+                document.getElementsByClassName('.tree').style.display = "none";
+                document.getElementsByClassName('.mug').style.display = "block";
+                level_count++;
+                console.log("going to level " + level_count);
+                break;
+            }
+            if(level_count === 6){
+                document.getElementsByClassName('.mug').style.display = "none";
+                document.getElementsByClassName('.cupcake').style.display = "block";
+                level_count++;
+                console.log("going to level " + level_count);
+                break;
+            }
+            if(level_count === 7){
+                document.querySelector('.cupcake').style.display = "none";
+                document.querySelector('.lollipop').style.display = "block";
+                level_count++;
+                console.log("going to level " + level_count);
                 break;
             }
             else break;
-        }
-    // }     
+        }    
 }
 
 
 
 /***** draggable elements */
-const letters = document.querySelectorAll('.letter');
+
 letters.forEach(letter => {
     letter.addEventListener('dragstart', dragStart);
 });
@@ -101,7 +156,7 @@ function dragStart(e) {
 }
 
 /***** drop targets *****/
-const boxes = document.querySelectorAll('.box');
+
 boxes.forEach(box => {
     box.addEventListener('dragenter', dragEnter)
     box.addEventListener('dragover', dragOver);
