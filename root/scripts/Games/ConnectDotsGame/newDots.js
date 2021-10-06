@@ -56,24 +56,9 @@ function initilizeDots() {
 
     data.dots = dotsIndex(numberJson[dotsNumber]);
     text = dotsNumber;
-    //resultObject(dotsNumber);
+    
 }
 
-//Creating a result object
-
-//creating the object that will hold result
-// function resultObject(number) {
-//     resultArray = JSON.parse(JSON.stringify(numberJson[number]));
-//     let length = Object.keys(resultArray).length;
-//     for (let i = 1; i <= length; i++) {
-//         let indexElement = "v" + i.toString();
-//         for (let j = 1; j <= length; j++) {
-//             let indexElement2 = "v" + j.toString();
-//             if ((resultArray[indexElement][indexElement2] = 1)) edges++;
-//             resultArray[indexElement][indexElement2] = 0;
-//         }
-//     }
-// }
 //Drawing Dots
 function drawDots() {
     //draws the dots on the screen
@@ -81,10 +66,11 @@ function drawDots() {
     for (; i < data.dots.length; i++) {
         //loop
         var d = data.dots[i];
-        //var width = (d.x/1920)*data.canvas.width;
-        //var height = (d.y/1080)*data.canvas.height;
+        var width = (d.x/1920)*data.canvas.width;
+        var height = (d.y/1080)*data.canvas.height;
         data.ctx.beginPath(); //begin a new path
-        data.ctx.arc(d.x, d.y, 15 / scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
+        //data.ctx.arc(d.x, d.y, 15 / scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
+        data.ctx.arc(width,height,15/scaleofdevice,0,2*Math.PI);
         data.ctx.fillStyle = "#ffb900"; //grey color
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
@@ -96,8 +82,6 @@ function prepCanvas() {
     //setup resolution and size of canvas
     var res = window.devicePixelRatio || 1, //resolution
         scale = 1 / res;
-
-    let canvasBg = "white";
     data.canvas = document.getElementById("dotCanvas"); //dots canvas
     data.ctx = data.canvas.getContext("2d"); //context
     
@@ -112,12 +96,6 @@ function prepCanvas() {
     data.canvas.addEventListener("mouseup", stop, false);
     data.canvas.addEventListener("mouseout", stop, false);
 
-    // console.log(data.canvas.height);
-    //data.ctx.scale(res, res);
-    // data.canvas.addEventListener('mousedown', function(event) { //mousedown event listener(click mouse), will call a function which will call checkForDot function
-    //     console.log(event.clientX,event.clientY);
-    //     checkForDot(event);
-    // });
 }
 
 function start(event) {
@@ -196,6 +174,8 @@ function clearCanvas(){
     data.ctx.fillRect(0, 0, data.canvas.width, data.canvas.height);
     restore_array = [];
     index =-1;
+    hint.innerHTML = "";
+
 }
 
 
