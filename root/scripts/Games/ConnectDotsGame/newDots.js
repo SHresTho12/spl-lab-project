@@ -1,18 +1,25 @@
 import numberJson from "../../../Assests/dotsGameResource/images_json/numbersJson.json";
 
+//html elements
 const canvas = document.getElementById("dotsCanvas");
 const downloadBtn = document.getElementById("downloadImg");
 const undoButton = document.getElementById("undoBtn");
+const hint = document.getElementById("hintText");
+const nextButton = document.getElementById("nextBtn");
+
+
+//States
 let resultArray;
 let actualObject;
-let score = 0;
-let edges = 0;
+let text;
 let scaleofdevice = window.devicePixelRatio;
-
 let restore_array = [];
 let index = -1;
+
+
+
+//Canvas Information
 var data = {
-    //global variable set equal to object
     canvas: null,
     ctx: null,
     clickedDot: null, //dot that was previously clicked--fromDot
@@ -20,9 +27,7 @@ var data = {
     // dots2: [{ x: 100, y: 100 }, { x: 200, y: 100 }, { x: 100, y: 200 }, { x: 200, y: 200 }] // shape rectangle
     dots: null,
     is_drawing: false,
-
     draw_color: "blue",
-
     drawing_width: "2",
 };
 
@@ -45,30 +50,30 @@ function dotsIndex(arg) {
 
 //initialize the dots
 function initilizeDots() {
-    let dotsNumber = 1; //Math.floor(Math.random() * 5);
-    console.log(dotsNumber);
+    let dotsNumber = Math.floor(Math.random() * 4);
 
     actualObject = numberJson; //numberJson[dotsNumber];
 
     data.dots = dotsIndex(numberJson[dotsNumber]);
-    resultObject(dotsNumber);
+    text = dotsNumber;
+    //resultObject(dotsNumber);
 }
 
 //Creating a result object
 
 //creating the object that will hold result
-function resultObject(number) {
-    resultArray = JSON.parse(JSON.stringify(numberJson[number]));
-    let length = Object.keys(resultArray).length;
-    for (let i = 1; i <= length; i++) {
-        let indexElement = "v" + i.toString();
-        for (let j = 1; j <= length; j++) {
-            let indexElement2 = "v" + j.toString();
-            if ((resultArray[indexElement][indexElement2] = 1)) edges++;
-            resultArray[indexElement][indexElement2] = 0;
-        }
-    }
-}
+// function resultObject(number) {
+//     resultArray = JSON.parse(JSON.stringify(numberJson[number]));
+//     let length = Object.keys(resultArray).length;
+//     for (let i = 1; i <= length; i++) {
+//         let indexElement = "v" + i.toString();
+//         for (let j = 1; j <= length; j++) {
+//             let indexElement2 = "v" + j.toString();
+//             if ((resultArray[indexElement][indexElement2] = 1)) edges++;
+//             resultArray[indexElement][indexElement2] = 0;
+//         }
+//     }
+// }
 //Drawing Dots
 function drawDots() {
     //draws the dots on the screen
@@ -84,6 +89,7 @@ function drawDots() {
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
     }
+    
 }
 
 function prepCanvas() {
@@ -94,7 +100,7 @@ function prepCanvas() {
     let canvasBg = "white";
     data.canvas = document.getElementById("dotCanvas"); //dots canvas
     data.ctx = data.canvas.getContext("2d"); //context
-    data.ctx.fillStyle = "white";
+    
     data.canvas.width = window.innerWidth - 60;
     data.canvas.height = 645;
     data.canvas.addEventListener("touchstart", start, false);
@@ -185,7 +191,7 @@ document.getElementById("clearCanvas").addEventListener("click", function () {
 });
 //clear canvas function
 function clearCanvas(){
-    data.ctx.fillStyle = "rgb(221, 205, 205)";
+    data.ctx.fillStyle = "rgb(73, 219, 85)";
     data.ctx.clearRect(0, 0, data.canvas.width, data.canvas.height);
     data.ctx.fillRect(0, 0, data.canvas.width, data.canvas.height);
     restore_array = [];
@@ -233,3 +239,23 @@ undoButton.addEventListener("click", function () {
         data.ctx.putImageData(restore_array[index],0,0);
     }
 });
+
+
+//functionality for drawing with dots
+nextButton.addEventListener("click",function(){
+    nextButtonFunctionality();
+});
+
+function nextButtonFunctionality(){
+    clearCanvas();
+    initilizeDots();
+    drawDots();
+    showHint();
+    
+}
+
+//Hint
+function showHint(){
+    hint.innerHTML =text;
+
+}
