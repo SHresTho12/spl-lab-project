@@ -69,8 +69,8 @@ function drawDots() {
         var width = (d.x/1920)*data.canvas.width;
         var height = (d.y/1080)*data.canvas.height;
         data.ctx.beginPath(); //begin a new path
-        //data.ctx.arc(d.x, d.y, 15 / scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
-        data.ctx.arc(width,height,15/scaleofdevice,0,2*Math.PI);
+        data.ctx.arc(d.x, d.y, 15 / scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
+       // data.ctx.arc(width,height,15/scaleofdevice,0,2*Math.PI);
         data.ctx.fillStyle = "#ffb900"; //grey color
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
