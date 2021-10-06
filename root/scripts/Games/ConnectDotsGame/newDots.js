@@ -85,7 +85,7 @@ function drawDots() {
         //var height = (d.y/1080)*data.canvas.height;
         data.ctx.beginPath(); //begin a new path
         data.ctx.arc(d.x, d.y, 15 / scaleofdevice, 0, 2 * Math.PI); //arc(x position, y position, radius, arc start, arc end) --full circumference of circle
-        data.ctx.fillStyle = "#28b485b6"; //grey color
+        data.ctx.fillStyle = "#ffb900"; //grey color
         data.ctx.fill(); //add fill to see on screen--set fillstyle
         data.ctx.closePath(); //close the path
     }
