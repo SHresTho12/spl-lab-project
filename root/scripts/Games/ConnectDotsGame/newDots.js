@@ -17,7 +17,7 @@ let index = -1;
 
 
 
-//Canvas Information
+//Canvas Information object
 var data = {
     canvas: null,
     ctx: null,

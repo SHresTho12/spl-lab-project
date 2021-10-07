@@ -1,11 +1,21 @@
 .dotsBody{
     background-image: 
-    url(../images/ConnectDotsGame/dotsGameBg2.jpg);
+    linear-gradient(to right, #28b485 ,#28b485b6);
     background-size:  cover;
     background-position: top; /* what of the size of the view page the image will always start from the top and stay there */
     position: relative;
 }
-
+.hint{
+  position: absolute;
+  right: 5%;
+  left:85%;
+  top:5%;
+  z-index: 10;
+  font-size: 300px;
+  color:#ffb900;
+  
+  
+  }
 .dotsHeading{
     position: absolute;
     left:40%;
@@ -13,7 +23,7 @@
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: chartreuse;
+    color: rgb(227, 247, 49);
     
    
 }
@@ -44,8 +54,8 @@ button{
     padding: 12px 42px;
     border-radius: 50px;
     font-size: 1.25rem;
-    background-color: rgb(19, 228, 81);
-    color: white;
+    background-color: rgb(223, 245, 31);
+    color: rgb(50, 233, 147);
     transform: translateY(-6px);
   }
 
