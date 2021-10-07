@@ -13,10 +13,11 @@
         <canvas class="dotsCanvas" id="dotCanvas"></canvas>
 
         <div class="tools">
-            <button type="button" class="dotsButton">Undo</button>
+            <button type="button" class="dotsButton" id="undoBtn">Undo</button>
 
             <button type="button" class="dotsButton" id="clearCanvas">Clear</button>
             <button type="button" class="dotsButton" id="downloadImg">Download</button>
+            <button type="button" class="dotsButton" id="nextBtn">Next</button>
     
             <div  class="color-button" style="background: brown;"></div>
             <div  class="color-button" style="background: red;"></div>
@@ -25,11 +26,11 @@
             <input type="color" class="color-picker">
             <input type="range" min="0" max="100" class="pen-range">
          </div> 
-
+         <h1 class="hint" id="hintText"></h1>
     </div>
     <div class="score_container">
         <h1 class="dotsHeading">Draw The Dots</h1>
-    <h2>Score :<span id="score">00</span></h2>
+    <!-- <h2>Score :<span id="score">00</span></h2> -->
     </div>
 
 

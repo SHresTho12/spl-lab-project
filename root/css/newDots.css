@@ -9,7 +9,9 @@ body{
 }
 .dotsCanvas{
     box-shadow: -3px 2px 9px 6px black;
+    background: rgb(73, 219, 85);
     cursor:pointer;
+    z-index: 1;
 }
 .tools{
     display: flex;
@@ -61,5 +63,24 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+
+}
+.dotsButton{
+    margin: 10px;
+    color: black;
+    background: yellow;
+    font-weight: 200;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+}
+.hint{
+position: absolute;
+right: 5%;
+left:90%;
+top:5%;
+z-index: 10;
+font-size: 100px;
+
 
 }
