@@ -1,4 +1,4 @@
-import numberJson from "../../../Assests/dotsGameResource/images_json/numbersJson.json";
+import numberJson from "../../../Assests/dotsGameResource/Newresource/AdjMat_JSON/numberJson.json";
 
 //html elements
 const canvas = document.getElementById("dotsCanvas");
@@ -8,10 +8,9 @@ const hint = document.getElementById("hintText");
 const nextButton = document.getElementById("nextBtn");
 
 
-//States
-let resultArray;
-let actualObject;
+//Game States
 let text;
+let actualObject;
 let scaleofdevice = window.devicePixelRatio;
 let restore_array = [];
 let index = -1;
@@ -23,8 +22,6 @@ var data = {
     canvas: null,
     ctx: null,
     clickedDot: null, //dot that was previously clicked--fromDot
-    // dots: [{ x: 200, y: 200 }, { x: 300, y: 200 }, { x: 220, y: 150 }, { x: 280, y: 150 }, { x: 250, y: 100 }] // letter A //array-dots variable
-    // dots2: [{ x: 100, y: 100 }, { x: 200, y: 100 }, { x: 100, y: 200 }, { x: 200, y: 200 }] // shape rectangle
     dots: null,
     is_drawing: false,
     draw_color: "blue",
@@ -98,6 +95,7 @@ function prepCanvas() {
 
 }
 
+//Drawing start event
 function start(event) {
     data.is_drawing = true;
     data.ctx.beginPath();
@@ -109,6 +107,7 @@ function start(event) {
     event.preventDefault();
 }
 
+//draw event
 function draw(event) {
     if (data.is_drawing) {
         data.ctx.lineTo(
@@ -125,6 +124,7 @@ function draw(event) {
     event.preventDefault();
 }
 
+//Stop the drawing path
 function stop(event) {
     if (data.is_drawing) {
         data.ctx.stroke();
@@ -178,20 +178,11 @@ function clearCanvas(){
 
 }
 
-
-function imageGenerate() {
-    let canvas = document.getElementById("dotsCanvas");
-    let img = canvas.toDataURL("../../../images/ConnectDotsGame");
-    document.write('<img src="' + img + '"/>');
-}
+//Initializing 
 prepCanvas();
-initilizeDots();
-drawDots();
 
-function change_color(element) {
-    data.draw_color = element.style.background;
-}
-prepCanvas();
+
+
 
 //download the image of  the canvas
 //only png

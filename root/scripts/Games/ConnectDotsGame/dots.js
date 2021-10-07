@@ -67,8 +67,8 @@ nextButton.addEventListener('click' , ()=> {
 
 
 
-
-function circleCollision(c1, c2) { //finds whether or not two circles are colliding on the screen
+//finds whether or not two circles are colliding on the screen
+function circleCollision(c1, c2) { 
     var a = c1.r + c2.r,
         x = c1.x - c2.x,
         y = c1.y - c2.y;
