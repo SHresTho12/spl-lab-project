@@ -64,9 +64,9 @@ body {
 
 @-webkit-keyframes glowText {
   from {
-    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b; }
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f; }
   to {
-    text-shadow: 5px 5px 0px #eb452b, 10px 10px 10px #efa032, 15px 15px 20px #46b59b, 20px 20px 30px #017e7f, 25px 25px 40px #052939, 30px 30px 50px #c11a2b, 35px 35px 60px #c11a2b, 40px 40px 70px #c11a2b, 45px 45px 80px #c11a2b; } }
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 10px #efa032, 15px 15px 20px #46b59b, 20px 20px 30px #017e7f; } }
 
 @font-face {
   font-family: "Creepy";
@@ -568,7 +568,7 @@ button {
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1rem 2rem #efa032; }
+    box-shadow: 0 1rem 2rem #e7914b; }
     .game-card-side-front {
       background-color: #fff; }
     .game-card-side-back {
@@ -951,7 +951,7 @@ button {
     background-image: url(../images/MemoryGame/backgroundMemoryGame.jpg); }
 
 .gaming-page-body {
-  background-image: url("../images/GamingPage/gamingPage-bg.jpg");
+  background-image: linear-gradient(to right, #7ed4f3, #9ddf97);
   background-attachment: fixed; }
 
 .gaming-header {
