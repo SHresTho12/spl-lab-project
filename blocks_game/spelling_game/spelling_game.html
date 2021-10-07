@@ -16,41 +16,40 @@
         <button class="btn" id="next_btn" onclick="goToNextLevel()"> Next </button>
         <div class="game_modal">
             <div class="header">
-                <h1> Can you spell what you see? </h1>
+                <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(65, 27, 100);"> Can you spell what you see? </h1>
                 <h4> drag the letters and put them in the boxes </h4>
             </div>
             
         
-            <div class="apple_game">
-                <!-- <div class="picture"> -->
+                <div class="apple_game">
+                    
                     <img class="correct hide" id="correct1" src="image/goodjob2.gif">
                     <img class="referencePic" id="apple" src="image/apple.png">
                     <img class="correct hide" id="correct2" src="image/goodjob.gif">
-                    <!-- <img class="correct" id="correct" src="image/correct-logo.png"> -->
-                <!-- </div> -->
-                <div class="boxes_apple">
-                    <div class="box" id="a_apple"></div>
+                    
+                    <div class="boxes_apple">
+                    <div class="box" id="a"></div>
                     <div class="box" id="p1"></div>
                     <div class="box" id="p2"></div>
                     <div class="box" id="l"></div>
-                    <div class="box" id="e_apple"></div>
+                    <div class="box" id="e"></div>
         
-                    <!-- <img class="correct hide" id="correct" src="image/goodjob.gif">
-                    <img class="cross hide" id="cross" src="image/cross.png"> -->
-                </div>
+                    <!-- <img class="correct hide" id="correct" src="image/goodjob.gif"> -->
+                    
+                    </div>
 
-                <div class ="draggables_apple">
-                <img class="letter" id="item_p2" draggable="true" src="image/P.png">
-                <img class="letter" id="item_l" draggable="true" src="image/L.png">
-                <img class="letter" id="item_e" draggable="true" src="image/E.png">
-                <img class="letter" id="item_p1" draggable="true" src="image/P.png">
-                <img class="letter" id="item_a" draggable="true" src="image/A.png">
+                    <div class ="draggables_apple">
+                        <img class="letter" id="item_p2" draggable="true" src="image/P.png">
+                        <img class="letter" id="item_l" draggable="true" src="image/L.png">
+                        <img class="letter" id="item_e" draggable="true" src="image/E.png">
+                        <img class="letter" id="item_p1" draggable="true" src="image/P.png">
+                    <img class="letter" id="item_a" draggable="true" src="image/A.png">
+                    </div>
                 </div>
-    
                 
-            </div>
+            
     
-            <div class="orange_game hide">
+                <div class="orange_game hide">
                 <img class="referencePic" id="orange" src="image/orange.png">
                 <div class="boxes_orange">
                     <div class="box" id="o"></div>
@@ -88,7 +87,7 @@
             </div>
 
             <div class="rose_game hide">
-                <img class="referencePic" id="rose" src="image/rose.jpg">
+                <img class="referencePic" id="rose" src="image/rose.png">
                 <div class="boxes_rose">
                     <div class="box" id="r"></div>
                     <div class="box" id="o"></div>
@@ -106,7 +105,7 @@
             </div>
 
             <div class="tree_game hide">
-                <img class="referencePic" id="tree" src="image/tree.png">
+                <img class="referencePic" id="tree" src="image/tree.jpg">
                 <div class="boxes_tree">
                     <div class="box" id="t"></div>
                     <div class="box" id="r"></div>
@@ -120,11 +119,66 @@
                     <img class="letter" id="tree_r" draggable="true" src="image/R.png">
                     <img class="letter" id="tree_e" draggable="true" src="image/E.png">
                 </div>
-
             </div>
 
+            <div class="mug_game hide">
+                <img class="referencePic" id="mug" src="image/mug.jpg">
+                <div class="boxes_mug">
+                    <div class="box" id="m"></div>
+                    <div class="box" id="u"></div>
+                    <div class="box" id="g"></div>
+                </div>
+                
+                <div class="draggables_mug">
+                    <img class="letter" id="mug_u" draggable="true" src="image/U.png">
+                    <img class="letter" id="mug_g" draggable="true" src="image/G.png">
+                    <img class="letter" id="mug_m" draggable="true" src="image/M.png">
+                </div>
+            </div>
+
+            <div class="cupcake_game hide">
+                <img class="referencePic" id="cupcake" src="image/cupcake.jpg">
+                <div class="boxes_cupcake">
+                    <div class="box" id="c"></div>
+                    <div class="box" id="u"></div>
+                    <div class="box" id="p"></div>
+                    <div class="box" id="c"></div>
+                    <div class="box" id="a"></div>
+                    <div class="box" id="k"></div>
+                    <div class="box" id="e"></div>
+                </div>
+                
+                <div class="draggables_cupcake">
+                    <img class="letter" id="cupcake_k" draggable="true" src="image/K.png">
+                    <img class="letter" id="cupcake_e" draggable="true" src="image/E.png">
+                    <img class="letter" id="cupcake_p" draggable="true" src="image/P.png">
+                    <img class="letter" id="cupcake_c1" draggable="true" src="image/C.png">
+                    <img class="letter" id="cupcake_a" draggable="true" src="image/A.png">
+                    <img class="letter" id="cupcake_u" draggable="true" src="image/U.png">
+                    <img class="letter" id="cupcake_c2" draggable="true" src="image/C.png">
+                </div>
+            </div>
+
+            <div class="books_game hide">
+                <img class="referencePic" id="books" src="image/book.png">
+                <div class="boxes_books">
+                    <div class="box" id="b"></div>
+                    <div class="box" id="o"></div>
+                    <div class="box" id="o"></div>
+                    <div class="box" id="k"></div>
+                    <div class="box" id="s"></div>
+                </div>
+                
+                <div class="draggables_books">
+                    <img class="letter" id="books_k" draggable="true" src="image/K.png">
+                    <img class="letter" id="books_o1" draggable="true" src="image/O.png">
+                    <img class="letter" id="books_b" draggable="true" src="image/B.png">
+                    <img class="letter" id="books_o2" draggable="true" src="image/O.png">
+                    <img class="letter" id="books_s" draggable="true" src="image/S.png">
+                </div>
+            </div>
+            
         </div>
-        
     </div>
 
 </body>

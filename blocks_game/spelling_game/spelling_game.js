@@ -1,31 +1,35 @@
 
-var count = 0; //global
+var count = 0; 
 var score = 0;
 var level_count = 1;
-var total_level = 3;
+var total_level = 8;
 
 const letters = document.querySelectorAll('.letter');
 const boxes = document.querySelectorAll('.box');
 
+const apple_boxes = document.querySelector('.boxes_apple').children;
+console.log(apple_boxes);
+console.log("number of apple boxes "+apple_boxes.length);
 const apple_game = document.querySelector('.apple_game')
-// const orange_game = document.querySelector('.orange_game')
 const correct = document.querySelector('.correct');
 
 
 
-function onclick_done_apple(e){
-    count = 0; 
-    if(count < boxes.length){
-        console.log("sorry, you have to spell the word.")
+function onclick_done_apple(e){ 
+    console.log("number of apple boxes "+apple_boxes.length);
+    
+    if(count < apple_boxes.length){
+        console.log("sorry, you have to spell the word.");
+        console.log("number of letters "+count);
     }
     else 
     {
     apple_done_btn_clicked = true;
     console.log(count);
-    for (let i = 0; i < boxes.length; i++) 
+    for (let i = 0; i < apple_boxes.length; i++) 
     {
-        var box_id = boxes[i].id;
-        var item_id = boxes[i].firstChild.id;
+        var box_id = apple_boxes[i].id;
+        var item_id = apple_boxes[i].firstChild.id;
     
         if(item_id === "item_p1" || item_id === "item_p2") 
         {
@@ -51,7 +55,7 @@ function onclick_done_apple(e){
             console.log(count);
         }
     }
-    if(count === boxes.length)
+    if(count === apple_boxes.length)
     {
         console.log(count);
         score = score + 5;
@@ -59,6 +63,7 @@ function onclick_done_apple(e){
         window.alert("your current score: " + score);
     }
     else cross.classList.remove('hide');
+    
     }
 }
 
@@ -78,9 +83,11 @@ function resetCurrentWord(e){
 
 function showHint(e){
     console.log("hint btn clicked");
+    console.log(apple_boxes[0].appendChild('.item_a'));
     if(level_count === 1){
-        document.getElementById('.a_apple').appendChild('.item_a');
-        document.getElementById('.e_apple').appendChild('.item_e');
+        apple_boxes[0].appendChild('.item_a');
+        apple_boxes[4].appendChild('.item_e');
+      
     } 
 }
 
@@ -102,36 +109,36 @@ function goToNextLevel(){
                 break;
             }
             if(level_count === 3){
-                document.getElementsByClassName('.car_game').style.display = "none";
-                document.getElementsByClassName('.rose_game').style.display = "block";
+                document.querySelector('.car_game').style.display = "none";
+                document.querySelector('.rose_game').style.display = "block";
                 level_count++;
                 console.log("going to level " + level_count);
                 break;
             }
             if(level_count === 4){
-                document.getElementsByClassName('.rose').style.display = "none";
-                document.getElementsByClassName('.tree').style.display = "block";
+                document.querySelector('.rose_game').style.display = "none";
+                document.querySelector('.tree_game').style.display = "block";
                 level_count++;
                 console.log("going to level " + level_count);
                 break;
             }
             if(level_count === 5){
-                document.getElementsByClassName('.tree').style.display = "none";
-                document.getElementsByClassName('.mug').style.display = "block";
+                document.querySelector('.tree_game').style.display = "none";
+                document.querySelector('.mug_game').style.display = "block";
                 level_count++;
                 console.log("going to level " + level_count);
                 break;
             }
             if(level_count === 6){
-                document.getElementsByClassName('.mug').style.display = "none";
-                document.getElementsByClassName('.cupcake').style.display = "block";
+                document.querySelector('.mug_game').style.display = "none";
+                document.querySelector('.cupcake_game').style.display = "block";
                 level_count++;
                 console.log("going to level " + level_count);
                 break;
             }
             if(level_count === 7){
-                document.querySelector('.cupcake').style.display = "none";
-                document.querySelector('.lollipop').style.display = "block";
+                document.querySelector('.cupcake_game').style.display = "none";
+                document.querySelector('.books_game').style.display = "block";
                 level_count++;
                 console.log("going to level " + level_count);
                 break;
