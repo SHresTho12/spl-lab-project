@@ -9,7 +9,7 @@
 }
 
 body {
-    background: lightcoral;
+    background: #83d0c9;
 }
 
 ::selection {
@@ -40,7 +40,7 @@ body {
 .start_btn button {
     font-size: 25px;
     font-weight: 500;
-    color: lightcoral;
+    color: green;
     padding: 15px 30px;
     outline: none;
     border: none;

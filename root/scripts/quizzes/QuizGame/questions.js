@@ -1,7 +1,7 @@
 // creating an array and passing the number, questions, options, and answers
 let questions = [{
         numb: 1,
-        question: "What is the first letter?",
+        question: "What is the first letter? <br> <img src='../../../images/QuizGame/A.jpg' width='100' height='100'> </br>",
         answer: "A",
         options: [
             "A",
@@ -12,7 +12,7 @@ let questions = [{
     },
     {
         numb: 2,
-        question: "What is this fruit?",
+        question: "What is this fruit? <br> <img src='../../../images/QuizGame/Apple.jpg' width='200' height='100'></br>",
         answer: "Apple",
         options: [
             "Orange",
@@ -23,7 +23,7 @@ let questions = [{
     },
     {
         numb: 3,
-        question: "What is the shape?",
+        question: "What is the shape? <br> <img src='../../../images/QuizGame/rectangle.png' width='150' height='150'></br>",
         answer: "Rectangle",
         options: [
             "Square",
@@ -34,7 +34,7 @@ let questions = [{
     },
     {
         numb: 4,
-        question: "What is the number?",
+        question: "What is the number? <br> <img src='../../../images/QuizGame/4.jpg' width='100' height='100'></br>",
         answer: "4",
         options: [
             "3",
@@ -45,7 +45,7 @@ let questions = [{
     },
     {
         numb: 5,
-        question: "What is the given cartoon character?",
+        question: "What is the given cartoon character? <br> <img src='../../../images/QuizGame/mickey.jpg' width='200' height='100'></br>",
         answer: "Mickey Mouse",
         options: [
             "Miney",
@@ -54,18 +54,5 @@ let questions = [{
             "Mickey Mouse"
         ]
     },
-    // you can uncomment the below codes and make duplicate as more as you want to add question
-    // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
 
-    //   {
-    //   numb: 6,
-    //   question: "Your Question is Here",
-    //   answer: "Correct answer of the question is here",
-    //   options: [
-    //     "Option 1",
-    //     "option 2",
-    //     "option 3",
-    //     "option 4"
-    //   ]
-    // },
 ];
