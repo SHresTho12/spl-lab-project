@@ -1,11 +1,21 @@
 .dotsBody{
     background-image: 
-    linear-gradient(to right, #28b485b6 ,#7ed56fc2);
+    linear-gradient(to right, #28b485 ,#28b485b6);
     background-size:  cover;
     background-position: top; /* what of the size of the view page the image will always start from the top and stay there */
     position: relative;
 }
-
+.hint{
+  position: absolute;
+  right: 5%;
+  left:85%;
+  top:5%;
+  z-index: 10;
+  font-size: 300px;
+  color:#ffb900;
+  
+  
+  }
 .dotsHeading{
     position: absolute;
     left:40%;
