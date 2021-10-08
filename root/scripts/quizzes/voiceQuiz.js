@@ -1,5 +1,5 @@
 const msgElement = document.getElementById('msg');
-
+const startBtn = document.getElementById('voice-record');
 const randomNum = getRandomNumber();
     //
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -9,8 +9,10 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 let recognition = new window.SpeechRecognition();
 
 //start recognition and the game
-recognition.start();
 
+startBtn.addEventListener("click",function(){
+  recognition.start();
+});
 
 //capture user voice
 function onSpeak(e){
@@ -26,7 +28,7 @@ function onSpeak(e){
 
 function writeMessage(msg){
     msgElement.innerHTML= `
-    <div>You Said :</div>
+    <div class="numberGuess">You Said :</div>
     <span class="guessBox">${msg}</span>
     `;
     
@@ -43,27 +45,27 @@ function checkNumber(msg) {
   
     // Check if valid number
     if (Number.isNaN(num)) {
-      msgElement.innerHTML += '<div>That is not a valid number</div>';
+      msgElement.innerHTML += '<div class="Guess Guess-Wrong">That is not a valid number</div>';
       return;
     }
   
     // Check in range
     if (num > 100 || num < 1) {
-      msgElement.innerHTML += '<div>Number must be between 1 and 100</div>';
+      msgElement.innerHTML += '<div class="Guess Guess-Wrong">Number must be between 1 and 100</div>';
       return;
     }
   
     // Check number
     if (num === randomNum) {
       document.body.innerHTML = `
-        <h2>Congrats! You have guessed the number! <br><br>
+        <h2 class="Guess Guess-Right">Congrats! You have guessed the number! <br><br>
         It was ${num}</h2>
-        <button class="play-again" id="play-again">Play Again</button>
+        <button class="voice-play-again" id="play-again">Play Again</button>
       `;
     } else if (num > randomNum) {
-      msgElement.innerHTML += '<div>GO LOWER</div>';
+      msgElement.innerHTML += '<div class="Guess Guess-Wrong">GO LOWER</div>';
     } else {
-      msgElement.innerHTML += '<div>GO HIGHER</div>';
+      msgElement.innerHTML += '<div class="Guess Guess-Wrong">GO HIGHER</div>';
     }
   }
   
