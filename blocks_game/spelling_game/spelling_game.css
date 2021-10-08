@@ -96,7 +96,7 @@
 
 .boxes_apple {margin-left: 15%;}
 
-.boxes_orange {margin-left: 15%;}
+.boxes_orange {margin-left: 9%;}
 
 .boxes_car {margin-left: 30%;}
 
@@ -117,10 +117,7 @@
     border: dashed 3px red;
 }
 
-#done_btn
-{
-    margin-left: 70%;
-}
+
 
 #hint_btn {margin-top: 10px;}
 

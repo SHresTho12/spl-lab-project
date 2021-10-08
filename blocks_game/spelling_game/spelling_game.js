@@ -1,92 +1,106 @@
-
-var count = 0; 
 var score = 0;
 var level_count = 1;
 var total_level = 8;
 
 const letters = document.querySelectorAll('.letter');
 const boxes = document.querySelectorAll('.box');
-
-const apple_boxes = document.querySelector('.boxes_apple').children;
-console.log(apple_boxes);
-console.log("number of apple boxes "+apple_boxes.length);
 const apple_game = document.querySelector('.apple_game')
 const correct = document.querySelector('.correct');
 
+const apple_boxes = document.querySelector('.boxes_apple').children;
+const orange_boxes = document.querySelector('.boxes_orange').children;
+const car_boxes = document.querySelector('.boxes_car').children;
 
+const apple_letters = document.querySelector('.draggables_apple').children;
 
-function onclick_done_apple(e){ 
-    console.log("number of apple boxes "+apple_boxes.length);
+function checkSpellingApple(e){ 
+    var count = 0;
     
-    if(count < apple_boxes.length){
-        console.log("sorry, you have to spell the word.");
-        console.log("number of letters "+count);
-    }
-    else 
-    {
-    apple_done_btn_clicked = true;
-    console.log(count);
+    // if(count < apple_boxes.length){
+    //     console.log("sorry, you have to spell the word.");
+    //     console.log("number of letters "+count);
+    // }
+
+    // else 
+    // {
+    
     for (let i = 0; i < apple_boxes.length; i++) 
     {
         var box_id = apple_boxes[i].id;
         var item_id = apple_boxes[i].firstChild.id;
-    
+        console.log(box_id);
+        console.log(item_id);
         if(item_id === "item_p1" || item_id === "item_p2") 
         {
-            if(box_id === "p1" || box_id === "p2")
-            {
-                count++;
-                console.log(count);
-            }
+            if(box_id === "p1" || box_id === "p2") count++;
         }
-        else if (item_id === "item_a" && box_id === "a") 
-        {
-            count++;
-            console.log(count);
-        }
-        else if (item_id === "item_l" && box_id === "l") 
-        {
-            count++;
-            console.log(count);
-        }
-        else if (item_id === "item_e" && box_id === "e") 
-        {
-            count++;
-            console.log(count);
-        }
+        else if (item_id === "item_a" && box_id === "a") count++;
+        else if (item_id === "item_l" && box_id === "l") count++;
+        else if (item_id === "item_e" && box_id === "e") count++;
+
+        console.log(count);
     }
-    if(count === apple_boxes.length)
-    {
+    if(count === apple_boxes.length){
         console.log(count);
         score = score + 5;
-        correct.classList.remove('hide');
-        window.alert("your current score: " + score);
+        document.getElementById('apple').src = "image/goodjob2.gif";
+        document.getElementById("score").innerHTML = "current score: " + score;
     }
     else cross.classList.remove('hide');
-    
-    }
+    //}
+}
+
+function checkSpellingOrange(e){
+    var count = 0; 
+    //if "done" is pressed before completing
+    // if(count < orange_boxes.length){
+    //     console.log("sorry, you have to spell the word.");
+    //     console.log("number of letters "+count);
+    // }
+    // else {
+        for (let i = 0; i < orange_boxes.length; i++) {
+            var box_id = orange_boxes[i].id;
+            var item_id = orange_boxes[i].firstChild.id;
+            
+            if(box_id === "o" && item_id === "orange_o") count++;
+            if(box_id === "r" && item_id === "orange_r") count++;
+            if(box_id === "a" && item_id === "orange_a") count++;
+            if(box_id === "n" && item_id === "orange_n") count++;
+            if(box_id === "g" && item_id === "orange_g") count++;
+            if(box_id === "e" && item_id === "orange_e") count++;
+            console.log(count);
+        }
+        if(count === orange_boxes.length){
+            console.log(count);
+            score = score + 5;
+            document.getElementById("orange").src = "image/goodjob.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        // else cross.classList.remove('hide');
+    //}
 }
 
 function done(){
     console.log('done btn pressed');
-    if(level_count === 1) onclick_done_apple();
+    if(level_count === 1) checkSpellingApple();
+    if(level_count === 2 ) checkSpellingOrange();
 }
 
 function resetCurrentWord(e){
     console.log("reset btn clicked");
     if(level_count === 1){
         for (let i = 0; i < boxes.length; i++){
-            boxes[i].removeChild();
+            apple_letters.append(boxes[i]);
+            boxes[i].innerHTML = " ";
         }
     }
 }
 
-function showHint(e){
+function showHint(){
     console.log("hint btn clicked");
-    console.log(apple_boxes[0].appendChild('.item_a'));
     if(level_count === 1){
-        apple_boxes[0].appendChild('.item_a');
-        apple_boxes[4].appendChild('.item_e');
+        apple_boxes[0].appendChild(apple_letters[4]);
+        apple_boxes[4].appendChild(apple_letters[2]);
       
     } 
 }
