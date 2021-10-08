@@ -63,7 +63,8 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-
+    font-family: 'Courier New', Courier, monospace;
+    color:#0c4ec9;
 }
 .dotsButton{
     margin: 10px;
