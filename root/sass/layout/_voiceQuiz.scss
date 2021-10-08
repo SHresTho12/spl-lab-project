@@ -15,9 +15,12 @@
     margin-top: 40px;
 }
 .guessBox{
-    border: 1px solid #dedede;
+    border: 2px solid #f8ab04;
     display: inline-block;
-    font-size: 30px;
+    font-size: 40px;
     margin: 20px;
     padding: 10px;
+    background-color: rgb(110, 110, 238);
+    border-radius: 5px;
+    box-shadow: 5px 5px #f8e004;
 }
