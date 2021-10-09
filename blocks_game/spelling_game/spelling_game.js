@@ -4,12 +4,24 @@ var total_level = 8;
 
 const letters = document.querySelectorAll('.letter');
 const boxes = document.querySelectorAll('.box');
+var arr = [];
+for (var i=0; i<letters.length; i++){
+    arr.push(letters[i]);
+}
+document.getElementsByClassName("letter");
 const apple_game = document.querySelector('.apple_game')
 const correct = document.querySelector('.correct');
 
 const apple_boxes = document.querySelector('.boxes_apple').children;
 const orange_boxes = document.querySelector('.boxes_orange').children;
 const car_boxes = document.querySelector('.boxes_car').children;
+const rose_boxes = document.querySelector('.boxes_rose').children;
+const tree_boxes = document.querySelector('.boxes_tree').children;
+const mug_boxes = document.querySelector('.boxes_mug').children;
+const cupcake_boxes = document.querySelector('.boxes_cupcake').children;
+const books_boxes = document.querySelector('.boxes_books').children;
+var yay = new Audio('yay.mp3');
+var oops = new Audio('oops.mp3');
 
 const apple_letters = document.querySelector('.draggables_apple').children;
 
@@ -21,8 +33,8 @@ function checkSpellingApple(e){
     //     console.log("number of letters "+count);
     // }
 
-    // else 
-    // {
+    //else 
+    {
     
     for (let i = 0; i < apple_boxes.length; i++) 
     {
@@ -43,21 +55,21 @@ function checkSpellingApple(e){
     if(count === apple_boxes.length){
         console.log(count);
         score = score + 5;
+        yay.play();
         document.getElementById('apple').src = "image/goodjob2.gif";
         document.getElementById("score").innerHTML = "current score: " + score;
     }
-    else cross.classList.remove('hide');
-    //}
+    else {
+        oops.play();
+        document.getElementById('apple').src = "image/sorry.gif";
+        alert("wrong spelling!! please retry.");
+    }
+    }
 }
 
 function checkSpellingOrange(e){
     var count = 0; 
-    //if "done" is pressed before completing
-    // if(count < orange_boxes.length){
-    //     console.log("sorry, you have to spell the word.");
-    //     console.log("number of letters "+count);
-    // }
-    // else {
+    
         for (let i = 0; i < orange_boxes.length; i++) {
             var box_id = orange_boxes[i].id;
             var item_id = orange_boxes[i].firstChild.id;
@@ -73,24 +85,190 @@ function checkSpellingOrange(e){
         if(count === orange_boxes.length){
             console.log(count);
             score = score + 5;
+            yay.play();
             document.getElementById("orange").src = "image/goodjob.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
-        // else cross.classList.remove('hide');
-    //}
+        else {
+            oops.play();
+            document.getElementById('orange').src = "image/sorry2.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingCar(e){//someting's wrong here
+    var count = 0; 
+    
+        for (let i = 0; i < car_boxes.length; i++) {
+            var box_id = car_boxes[i].id;
+            var item_id = car_boxes[i].firstChild.id;
+            
+            if(box_id === "c" && item_id === "car_c") count++;
+            if(box_id === "a" && item_id === "car_a") count++;
+            if(box_id === "r" && item_id === "car_r") count++;
+            console.log(count);
+        }
+        if(count === car_boxes.length){
+            console.log(count);
+            score = score + 5;
+            yay.play();
+            document.getElementById("car").src = "image/goodjob3.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('car').src = "image/sorry.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingRose(e){
+    var count = 0; 
+
+        for (let i = 0; i < rose_boxes.length; i++) {
+            var box_id = rose_boxes[i].id;
+            var item_id = rose_boxes[i].firstChild.id;
+            
+            if(box_id === "r" && item_id === "rose_r") count++;
+            if(box_id === "o" && item_id === "rose_o") count++;
+            if(box_id === "s" && item_id === "rose_s") count++;
+            if(box_id === "e" && item_id === "rose_e") count++;
+            console.log(count);
+        }
+        if(count === rose_boxes.length){
+            console.log(count);
+            score = score + 5;
+            yay.play();
+            document.getElementById("rose").src = "image/goodjob4.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('rose').src = "image/sorry2.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingTree(e){
+    var count = 0; 
+    
+        for (let i = 0; i < tree_boxes.length; i++) {
+            var box_id = tree_boxes[i].id;
+            var item_id = tree_boxes[i].firstChild.id;
+            
+            if(box_id === "t" && item_id === "tree_t") count++;
+            if(box_id === "r" && item_id === "tree_r") count++;
+            if((box_id === "e" && item_id === "tree_e1") || (box_id === "e" && item_id === "tree_e2")) count++;
+            //if(box_id === "e" && item_id === "tree_e1") count++;
+            console.log(count);
+        }
+        if(count === tree_boxes.length){
+            console.log(count);
+            score = score + 5;
+            yay.play();
+            document.getElementById("tree").src = "image/goodjob.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('tree').src = "image/sorry.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingMug(e){
+    var count = 0; 
+    
+        for (let i = 0; i < mug_boxes.length; i++) {
+            var box_id = mug_boxes[i].id;
+            var item_id = mug_boxes[i].firstChild.id;
+            
+            if(box_id === "m" && item_id === "mug_m") count++;
+            if(box_id === "u" && item_id === "mug_u") count++;
+            if(box_id === "g" && item_id === "mug_g") count++;
+            console.log(count);
+        }
+        if(count === mug_boxes.length){
+            console.log(count);
+            score = score + 5;
+            yay.play();
+            document.getElementById("mug").src = "image/goodjob2.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('mug').src = "image/sorry2.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingCupcake(e){
+    var count = 0; 
+    
+        for (let i = 0; i < cupcake_boxes.length; i++) {
+            var box_id = cupcake_boxes[i].id;
+            var item_id = cupcake_boxes[i].firstChild.id;
+            
+            if((box_id === "c" && item_id === "cupcake_c1") || (box_id === "c" && item_id === "cupcake_c2")) count++;
+            if(box_id === "u" && item_id === "cupcake_u") count++;
+            if(box_id === "p" && item_id === "cupcake_p") count++;
+            if(box_id === "a" && item_id === "cupcake_a") count++;
+            if(box_id === "k" && item_id === "cupcake_k") count++;
+            if(box_id === "e" && item_id === "cupcake_e") count++;
+            console.log(count);
+        }
+        if(count === cupcake_boxes.length){
+            console.log(count);
+            score = score + 5;
+            yay.play();
+            document.getElementById("cupcake").src = "image/goodjob3.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('cupcake').src = "image/sorry.gif";
+            alert("wrong spelling!! please retry.");
+        }
+}
+function checkSpellingBooks(e){
+    var count = 0; 
+    
+        for (let i = 0; i < books_boxes.length; i++) {
+            var box_id = books_boxes[i].id;
+            var item_id = books_boxes[i].firstChild.id;
+            
+            if((box_id === "o" && item_id === "books_o1") || (box_id === "o" && item_id === "books_o2")) count++;
+            if(box_id === "r" && item_id === "books_b") count++;
+            if(box_id === "a" && item_id === "books_k") count++;
+            if(box_id === "n" && item_id === "books_s") count++;
+            console.log(count);
+        }
+        if(count === books_boxes.length){
+            console.log(count);
+            yay.play();
+            score = score + 5;
+            document.getElementById("books").src = "image/goodjob4.gif";
+            document.getElementById("score").innerHTML = "current score: " + score;
+        }
+        else {
+            oops.play();
+            document.getElementById('books').src = "image/sorry2.gif";
+            alert("wrong spelling!! please retry.");
+        }
 }
 
 function done(){
     console.log('done btn pressed');
     if(level_count === 1) checkSpellingApple();
     if(level_count === 2 ) checkSpellingOrange();
+    if(level_count === 3) checkSpellingCar();
+    if(level_count === 4) checkSpellingRose();
+    if(level_count === 5) checkSpellingTree();
+    if(level_count === 6) checkSpellingMug();
+    if(level_count === 7) checkSpellingCupcake();
+    if(level_count === 8) checkSpellingBooks();
 }
 
 function resetCurrentWord(e){
     console.log("reset btn clicked");
     if(level_count === 1){
         for (let i = 0; i < boxes.length; i++){
-            apple_letters.append(boxes[i]);
+            apple_letters.appendChild(boxes[i]);
             boxes[i].innerHTML = " ";
         }
     }
@@ -98,10 +276,9 @@ function resetCurrentWord(e){
 
 function showHint(){
     console.log("hint btn clicked");
-    if(level_count === 1){
+    if(level_count === 1){//apple
         apple_boxes[0].appendChild(apple_letters[4]);
         apple_boxes[4].appendChild(apple_letters[2]);
-      
     } 
 }
 
