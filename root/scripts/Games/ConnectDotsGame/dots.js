@@ -110,7 +110,8 @@ function prepCanvas() {
         checkForDot(event);
     });
 }
-//draws the dots on the scree
+
+//draws the dots on the screen
 function drawDots() {
     
     var i = 0;
