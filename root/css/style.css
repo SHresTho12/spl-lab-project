@@ -149,8 +149,8 @@ body {
   animation: glowText 3s ease-in-out infinite alternate; }
 
 .game-title {
-  color: #ff7730;
-  font-family: Creepy, serif;
+  color: yellow;
+  font-family: cursive;
   font-weight: normal;
   text-align: center;
   font-size: 6em; }
@@ -977,8 +977,8 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #FF6D00;
-  font-family: Creepy, serif;
+  color: #def703;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   transition: background-color 500ms, font-size 500ms; }
 
 .overlay-text-small {
@@ -990,9 +990,9 @@ button {
   animation: overlay-grow 500ms forwards; }
 
 .game-info {
-  color: #e644e6;
+  color: #f8cc3d;
   font-family: fantasy,serif;
-  font-size: 4em; }
+  font-size: 3em; }
 
 .game-info-container {
   display: flex;
@@ -1064,8 +1064,8 @@ button {
   perspective: 100rem; }
   .memory-game-body {
     background-repeat: no-repeat;
-    background-size: auto;
-    background-image: url(../images/MemoryGame/backgroundMemoryGame.jpg); }
+    background-size: cover;
+    background-image: url(../images/MemoryGame/bg.png); }
 
 .gaming-page-body {
   background-image: linear-gradient(to right, #7ed4f3, #9ddf97);
