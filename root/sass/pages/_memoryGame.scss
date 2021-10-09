@@ -1,8 +1,8 @@
 .memory-game{
    &-body{
     background-repeat: no-repeat;
-    background-size: auto;
-    background-image:url(../images/MemoryGame/backgroundMemoryGame.jpg);
+    background-size: cover;
+    background-image:url(../images/MemoryGame/bg.png);
    }
     width: 640px;
     height: 640px;
