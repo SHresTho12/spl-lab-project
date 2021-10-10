@@ -1,57 +1,57 @@
 // creating an array and passing the number, questions, options and answer
 let questions = [{
         numb: 1,
-        question: "What is the first letter? <br> <img src='../../../images/QuizGame/A.jpg' width='100' height='100'> </br>",
-        answer: "A",
+        question: "What is the animal? <br> <img src='../../../images/QuizGame/cat.jpg' width='100' height='100'> </br>",
+        answer: "Cat",
         options: [
-            "A",
-            "B",
-            "C",
-            "D"
+            "Dog",
+            "Bird",
+            "Cat",
+            "Elephant"
         ]
     },
     {
         numb: 2,
-        question: "What is this fruit? <br> <img src='../../../images/QuizGame/Apple.jpg' width='200' height='100'></br>",
-        answer: "Apple",
+        question: "What is the animal? <br> <img src='../../../images/QuizGame/dog.jpg' width='100' height='100'></br>",
+        answer: "Dog",
         options: [
-            "Orange",
-            "Mango",
-            "Apple",
-            "Tamarind"
+            "Tiger",
+            "Dog",
+            "Elephant",
+            "Cat"
         ]
     },
     {
         numb: 3,
-        question: "What is the shape? <br> <img src='../../../images/QuizGame/rectangle.png' width='150' height='150'></br>",
-        answer: "Rectangle",
+        question: "What is the animal? <br> <img src='../../../images/QuizGame/bird.jpg' width='100' height='100'></br>",
+        answer: "Bird",
         options: [
-            "Square",
-            "Rectangle",
-            "Circle",
-            "Triangle"
+            "Bird",
+            "Cat",
+            "Dog",
+            "Tiger"
         ]
     },
     {
         numb: 4,
-        question: "What is the number? <br> <img src='../../../images/QuizGame/4.jpg' width='100' height='100'></br>",
-        answer: "4",
+        question: "What is the animal? <br> <img src='../../../images/QuizGame/elephant.jpg' width='100' height='100'></br>",
+        answer: "Elephant",
         options: [
-            "3",
-            "2",
-            "4",
-            "5"
+            "Tiger",
+            "Dog",
+            "Cat",
+            "Elephant"
         ]
     },
     {
         numb: 5,
-        question: "What is the given cartoon character? <br> <img src='../../../images/QuizGame/mickey.jpg' width='200' height='100'></br>",
-        answer: "Mickey Mouse",
+        question: "What is the animal? <br> <img src='../../../images/QuizGame/tiger.jpg' width='100' height='100'></br>",
+        answer: "Tiger",
         options: [
-            "Miney",
-            "Donald",
-            "Goofey",
-            "Mickey Mouse"
+            "Cat",
+            "Dog",
+            "Tiger",
+            "Elephant"
         ]
     },
 

@@ -1,57 +1,57 @@
 // creating an array and passing the number, questions, options and answer
 let questions = [{
         numb: 1,
-        question: "What is the first letter? <br> <img src='../../../images/QuizGame/A.jpg' width='100' height='100'> </br>",
-        answer: "A",
+        question: "What is the color? <br> <img src='../../../images/QuizGame/blue.png' width='100' height='100'> </br>",
+        answer: "Blue",
         options: [
-            "A",
-            "B",
-            "C",
-            "D"
+            "Black",
+            "Blue",
+            "Green",
+            "Red"
         ]
     },
     {
         numb: 2,
-        question: "What is this fruit? <br> <img src='../../../images/QuizGame/Apple.jpg' width='200' height='100'></br>",
-        answer: "Apple",
+        question: "What is the color? <br> <img src='../../../images/QuizGame/green.png' width='100' height='100'></br>",
+        answer: "Green",
         options: [
-            "Orange",
-            "Mango",
-            "Apple",
-            "Tamarind"
+            "Green",
+            "Black",
+            "Yellow",
+            "Blue"
         ]
     },
     {
         numb: 3,
-        question: "What is the shape? <br> <img src='../../../images/QuizGame/rectangle.png' width='150' height='150'></br>",
-        answer: "Rectangle",
+        question: "What is the color? <br> <img src='../../../images/QuizGame/yellow.png' width='100' height='100'></br>",
+        answer: "Yellow",
         options: [
-            "Square",
-            "Rectangle",
-            "Circle",
-            "Triangle"
+            "Black",
+            "Blue",
+            "Yellow",
+            "Green"
         ]
     },
     {
         numb: 4,
-        question: "What is the number? <br> <img src='../../../images/QuizGame/4.jpg' width='100' height='100'></br>",
-        answer: "4",
+        question: "What is the color? <br> <img src='../../../images/QuizGame/black.png' width='100' height='100'></br>",
+        answer: "Black",
         options: [
-            "3",
-            "2",
-            "4",
-            "5"
+            "Yellow",
+            "Red",
+            "Blue",
+            "Black"
         ]
     },
     {
         numb: 5,
-        question: "What is the given cartoon character? <br> <img src='../../../images/QuizGame/mickey.jpg' width='200' height='100'></br>",
-        answer: "Mickey Mouse",
+        question: "What is the color? <br> <img src='../../../images/QuizGame/red.png' width='100' height='100'></br>",
+        answer: "Red",
         options: [
-            "Miney",
-            "Donald",
-            "Goofey",
-            "Mickey Mouse"
+            "Red",
+            "Blue",
+            "Black",
+            "Green"
         ]
     },
 
