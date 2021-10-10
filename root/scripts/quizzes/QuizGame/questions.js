@@ -1,40 +1,40 @@
-// creating an array and passing the number, questions, options, and answers
+// creating an array and passing the number, questions, options and answer
 let questions = [{
         numb: 1,
-        question: "What is the first letter? <br> <img src='../../../images/QuizGame/A.jpg' width='100' height='100'> </br>",
-        answer: "A",
+        question: "What is this number? <br> <img src='../../../images/QuizGame/3.png' width='100' height='100'> </br>",
+        answer: "3",
         options: [
-            "A",
-            "B",
-            "C",
-            "D"
+            "2",
+            "3",
+            "4",
+            "5"
         ]
     },
     {
         numb: 2,
-        question: "What is this fruit? <br> <img src='../../../images/QuizGame/Apple.jpg' width='200' height='100'></br>",
-        answer: "Apple",
+        question: "Spell the number <br> <img src='../../../images/QuizGame/10.png' width='100' height='100'></br>",
+        answer: "Ten",
         options: [
-            "Orange",
-            "Mango",
-            "Apple",
-            "Tamarind"
+            "One",
+            "Zero",
+            "Two",
+            "Ten"
         ]
     },
     {
         numb: 3,
-        question: "What is the shape? <br> <img src='../../../images/QuizGame/rectangle.png' width='150' height='150'></br>",
-        answer: "Rectangle",
+        question: "What is this number? <br> <img src='../../../images/QuizGame/11.png' width='100' height='100'></br>",
+        answer: "11",
         options: [
-            "Square",
-            "Rectangle",
-            "Circle",
-            "Triangle"
+            "11",
+            "12",
+            "13",
+            "14"
         ]
     },
     {
         numb: 4,
-        question: "What is the number? <br> <img src='../../../images/QuizGame/4.jpg' width='100' height='100'></br>",
+        question: "What is this number? <br> <img src='../../../images/QuizGame/4.png' width='100' height='100'></br>",
         answer: "4",
         options: [
             "3",
@@ -45,13 +45,13 @@ let questions = [{
     },
     {
         numb: 5,
-        question: "What is the given cartoon character? <br> <img src='../../../images/QuizGame/mickey.jpg' width='200' height='100'></br>",
-        answer: "Mickey Mouse",
+        question: "Spell the number <br> <img src='../../../images/QuizGame/5.png' width='100' height='100'></br>",
+        answer: "Five",
         options: [
-            "Miney",
-            "Donald",
-            "Goofey",
-            "Mickey Mouse"
+            "Four",
+            "Five",
+            "Six",
+            "Seven"
         ]
     },
 
