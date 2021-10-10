@@ -1,32 +1,204 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./scripts/Games/memoryGame.js":
+var __webpack_exports__ = {};
 /*!*************************************!*\
   !*** ./scripts/Games/memoryGame.js ***!
   \*************************************/
-/***/ (() => {
 
-eval("\r\n\r\n//audio controller for all kinds of moves and matches\r\n\r\nclass AudioController {\r\n  \r\n  constructor() {\r\n      this.bgMusic = new Audio('../../Assests/Audio/creepy.mp3');\r\n      this.flipSound = new Audio('../../Assests/Audio/flip.wav');\r\n      this.matchSound = new Audio('../../Assests/Audio/match.wav');\r\n      this.victorySound = new Audio('../../Assests/Audio/victory.wav');\r\n      this.gameOverSound = new Audio('../../Assests/Audio/gameOver.wav');\r\n      this.bgMusic.volume = 0.5;\r\n      this.bgMusic.loop = true;\r\n  }\r\n  startMusic() {\r\n      this.bgMusic.play();\r\n  }\r\n  stopMusic() {\r\n      this.bgMusic.pause();\r\n      this.bgMusic.currentTime = 0;\r\n  }\r\n  flip() {\r\n      this.flipSound.play();\r\n  }\r\n  match() {\r\n      this.matchSound.play();\r\n  }\r\n  victory() {\r\n      this.stopMusic();\r\n      this.victorySound.play();\r\n  }\r\n  gameOver() {\r\n      this.stopMusic();\r\n      this.gameOverSound.play();\r\n  }\r\n}\r\n//Creating a Game Class \r\nclass MixOrMatch {\r\n  constructor(totalTime, cards) {\r\n      this.cardsArray = cards;\r\n      this.totalTime = totalTime;\r\n      this.timeRemaining = totalTime;\r\n      this.timer = document.getElementById('time-remaining')\r\n      this.ticker = document.getElementById('flips');\r\n      this.cardScore = document.getElementById('score');\r\n      this.audioController = new AudioController();\r\n      this.score = 0;\r\n  }\r\n\r\n  startGame() {\r\n      this.totalClicks = 0;\r\n      this.timeRemaining = this.totalTime;\r\n      this.cardToCheck = null;\r\n      this.matchedCards = [];\r\n      this.busy = true;\r\n      setTimeout(() => {\r\n          this.audioController.startMusic();\r\n          this.shuffleCards(this.cardsArray);\r\n          this.countdown = this.startCountdown();\r\n          this.busy = false;\r\n      }, 500)\r\n      this.hideCards();\r\n      this.timer.innerText = this.timeRemaining;\r\n      this.ticker.innerText = this.totalClicks;\r\n  }\r\n  startCountdown() {\r\n      return setInterval(() => {\r\n          this.timeRemaining--;\r\n          this.timer.innerText = this.timeRemaining;\r\n          if(this.timeRemaining === 0)\r\n              this.gameOver();\r\n      }, 1000);\r\n  }\r\n  gameOver() {\r\n      clearInterval(this.countdown);\r\n      this.audioController.gameOver();\r\n      document.getElementById('game-over-text').classList.add('visible');\r\n  }\r\n  victory() {\r\n      clearInterval(this.countdown);\r\n      this.audioController.victory();\r\n      document.getElementById('victory-text').classList.add('visible');\r\n  }\r\n  hideCards() {\r\n      this.cardsArray.forEach(card => {\r\n          card.classList.remove('visible');\r\n          card.classList.remove('matched');\r\n      });\r\n  }\r\n  //Flipping a Card\r\n  flipCard(card) {\r\n      if(this.canFlipCard(card)) {\r\n          this.audioController.flip();\r\n          this.totalClicks++;\r\n          this.ticker.innerText = this.totalClicks;\r\n          card.classList.add('visible');\r\n\r\n          if(this.cardToCheck) {\r\n              this.checkForCardMatch(card);\r\n          } else {\r\n              this.cardToCheck = card;\r\n          }\r\n      }\r\n  }\r\n  //Checking card for match\r\n  checkForCardMatch(card) {\r\n      if(this.getCardType(card) === this.getCardType(this.cardToCheck))\r\n          {this.cardMatch(card, this.cardToCheck);\r\n            this.score = this.score+10;\r\n            this.cardScore.innerHTML = this.score;\r\n          }\r\n      else \r\n          this.cardMismatch(card, this.cardToCheck);\r\n\r\n      this.cardToCheck = null;\r\n  }\r\n  //Actual Matching Function\r\n  cardMatch(card1, card2) {\r\n      this.matchedCards.push(card1);\r\n      this.matchedCards.push(card2);\r\n      card1.classList.add('matched');\r\n      card2.classList.add('matched');\r\n      card1.classList.remove('hints');\r\n      card2.classList.remove('hints');\r\n      this.audioController.match();\r\n      if(this.matchedCards.length === this.cardsArray.length)\r\n          this.victory();\r\n  }\r\n  cardMismatch(card1, card2) {\r\n      this.busy = true;\r\n      setTimeout(() => {\r\n          card1.classList.remove('visible');\r\n          card2.classList.remove('visible');\r\n          this.busy = false;\r\n      }, 1000);\r\n  }\r\n  shuffleCards(cardsArray) { // Fisher-Yates Shuffle Algorithm.\r\n      for (let i = cardsArray.length - 1; i > 0; i--) {\r\n          let randIndex = Math.floor(Math.random() * (i + 1));\r\n          cardsArray[randIndex].style.order = i;\r\n          cardsArray[i].style.order = randIndex;\r\n      }\r\n  }\r\n  getCardType(card) {\r\n      return card.getElementsByClassName('memory-card-value')[0].src;\r\n  }\r\n  canFlipCard(card) {\r\n      return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;\r\n  }\r\n}\r\n\r\nif (document.readyState == 'loading') {\r\n  document.addEventListener('DOMContentLoaded', ready);\r\n} else {\r\n  ready();\r\n}\r\n\r\nfunction ready() {\r\n  let overlays = Array.from(document.getElementsByClassName('overlay-text'));\r\n  let cards = Array.from(document.getElementsByClassName('memory-card'));\r\n  let game = new MixOrMatch(100, cards);\r\n  let hintButton = document.getElementById('hint-button');\r\n\r\n  hintButton.addEventListener('click',()=>{\r\n\r\n    let hintCards = Array.from(document.getElementsByClassName('hint'));\r\n    hintCards.forEach(hintCard => {\r\n      hintCard.classList.add('hints-memory-card');\r\n    });\r\n\r\n    setTimeout(() => {\r\n      let rotatedCard = Array.from(document.getElementsByClassName('hints-memory-card'));\r\n      rotatedCard.forEach(card => {\r\n        card.classList.remove('hints-memory-card');\r\n      });\r\n  }, 5000);\r\n\r\n\r\n  });\r\n\r\n  overlays.forEach(overlay => {\r\n      overlay.addEventListener('click', () => {\r\n          overlay.classList.remove('visible');\r\n          game.startGame();\r\n      });\r\n  });\r\n\r\n  cards.forEach(card => {\r\n      card.addEventListener('click', () => {\r\n          game.flipCard(card);\r\n      });\r\n  });\r\n}\r\n\r\n\n\n//# sourceURL=webpack://root/./scripts/Games/memoryGame.js?");
 
-/***/ })
+//audio controller for all kinds of moves and matches
 
-/******/ 	});
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./scripts/Games/memoryGame.js"]();
-/******/ 	
+class AudioController {
+  
+  constructor() {
+      this.bgMusic = new Audio('../../Assests/Audio/creepy.mp3');
+      this.flipSound = new Audio('../../Assests/Audio/flip.wav');
+      this.matchSound = new Audio('../../Assests/Audio/match.wav');
+      this.victorySound = new Audio('../../Assests/Audio/victory.wav');
+      this.gameOverSound = new Audio('../../Assests/Audio/gameOver.wav');
+      this.bgMusic.volume = 0.5;
+      this.bgMusic.loop = true;
+  }
+  startMusic() {
+      this.bgMusic.play();
+  }
+  stopMusic() {
+      this.bgMusic.pause();
+      this.bgMusic.currentTime = 0;
+  }
+  flip() {
+      this.flipSound.play();
+  }
+  match() {
+      this.matchSound.play();
+  }
+  victory() {
+      this.stopMusic();
+      this.victorySound.play();
+  }
+  gameOver() {
+      this.stopMusic();
+      this.gameOverSound.play();
+  }
+}
+//Creating a Game Class 
+class MixOrMatch {
+  constructor(totalTime, cards) {
+      this.cardsArray = cards;
+      this.totalTime = totalTime;
+      this.timeRemaining = totalTime;
+      this.timer = document.getElementById('time-remaining')
+      this.ticker = document.getElementById('flips');
+      this.cardScore = document.getElementById('score');
+      this.audioController = new AudioController();
+      this.score = 0;
+  }
+
+  startGame() {
+      this.totalClicks = 0;
+      this.timeRemaining = this.totalTime;
+      this.cardToCheck = null;
+      this.matchedCards = [];
+      this.busy = true;
+      setTimeout(() => {
+          this.audioController.startMusic();
+          this.shuffleCards(this.cardsArray);
+          this.countdown = this.startCountdown();
+          this.busy = false;
+      }, 500)
+      this.hideCards();
+      this.timer.innerText = this.timeRemaining;
+      this.ticker.innerText = this.totalClicks;
+  }
+  startCountdown() {
+      return setInterval(() => {
+          this.timeRemaining--;
+          this.timer.innerText = this.timeRemaining;
+          if(this.timeRemaining === 0)
+              this.gameOver();
+      }, 1000);
+  }
+  gameOver() {
+      clearInterval(this.countdown);
+      this.audioController.gameOver();
+      document.getElementById('game-over-text').classList.add('visible');
+  }
+  victory() {
+      clearInterval(this.countdown);
+      this.audioController.victory();
+      document.getElementById('victory-text').classList.add('visible');
+  }
+  hideCards() {
+      this.cardsArray.forEach(card => {
+          card.classList.remove('visible');
+          card.classList.remove('matched');
+      });
+  }
+  //Flipping a Card
+  flipCard(card) {
+      if(this.canFlipCard(card)) {
+          this.audioController.flip();
+          this.totalClicks++;
+          this.ticker.innerText = this.totalClicks;
+          card.classList.add('visible');
+
+          if(this.cardToCheck) {
+              this.checkForCardMatch(card);
+          } else {
+              this.cardToCheck = card;
+          }
+      }
+  }
+  //Checking card for match
+  checkForCardMatch(card) {
+      if(this.getCardType(card) === this.getCardType(this.cardToCheck))
+          {this.cardMatch(card, this.cardToCheck);
+            this.score = this.score+10;
+            this.cardScore.innerHTML = this.score;
+          }
+      else 
+          this.cardMismatch(card, this.cardToCheck);
+
+      this.cardToCheck = null;
+  }
+  //Actual Matching Function
+  cardMatch(card1, card2) {
+      this.matchedCards.push(card1);
+      this.matchedCards.push(card2);
+      card1.classList.add('matched');
+      card2.classList.add('matched');
+      card1.classList.remove('hints');
+      card2.classList.remove('hints');
+      this.audioController.match();
+      if(this.matchedCards.length === this.cardsArray.length)
+          this.victory();
+  }
+  cardMismatch(card1, card2) {
+      this.busy = true;
+      setTimeout(() => {
+          card1.classList.remove('visible');
+          card2.classList.remove('visible');
+          this.busy = false;
+      }, 1000);
+  }
+  shuffleCards(cardsArray) { // Fisher-Yates Shuffle Algorithm.
+      for (let i = cardsArray.length - 1; i > 0; i--) {
+          let randIndex = Math.floor(Math.random() * (i + 1));
+          cardsArray[randIndex].style.order = i;
+          cardsArray[i].style.order = randIndex;
+      }
+  }
+  getCardType(card) {
+      return card.getElementsByClassName('memory-card-value')[0].src;
+  }
+  canFlipCard(card) {
+      return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
+  }
+}
+
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready);
+} else {
+  ready();
+}
+
+function ready() {
+  let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+  let cards = Array.from(document.getElementsByClassName('memory-card'));
+  let game = new MixOrMatch(100, cards);
+  let hintButton = document.getElementById('hint-button');
+
+  hintButton.addEventListener('click',()=>{
+
+    let hintCards = Array.from(document.getElementsByClassName('hint'));
+    hintCards.forEach(hintCard => {
+      hintCard.classList.add('hints-memory-card');
+    });
+
+    setTimeout(() => {
+      let rotatedCard = Array.from(document.getElementsByClassName('hints-memory-card'));
+      rotatedCard.forEach(card => {
+        card.classList.remove('hints-memory-card');
+      });
+  }, 5000);
+
+
+  });
+
+  overlays.forEach(overlay => {
+      overlay.addEventListener('click', () => {
+          overlay.classList.remove('visible');
+          game.startGame();
+      });
+  });
+
+  cards.forEach(card => {
+      card.addEventListener('click', () => {
+          game.flipCard(card);
+      });
+  });
+}
+
+
 /******/ })()
 ;
+//# sourceMappingURL=memoryGame.js.map

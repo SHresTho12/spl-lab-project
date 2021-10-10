@@ -6,8 +6,10 @@ module.exports = {
 		typingTest: ['./scripts/quizzes/typingTest.js'],
 		newDots: ['./scripts/Games/ConnectDotsGame/newDots.js']
 		
+		
 	  },
 	  output: {
 		filename: '[name].js',
 	  },
+	  devtool: "source-map"
 };
