@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Register</title>
+    <link rel="stylesheet" href="../../css/logIn.css">
+</head>
+<body>
+    <div class="background">
+        <div class="form_modal">
+            <div class="button_box">
+                <div id="sliding_btn"></div>
+                <button type="button" class="toggle_button" onclick="login1()">Login</button>
+                <button type="button" class="toggle_button" onclick="register1()">Register</button>
+            </div>
+            <div class="google_icon">
+                <img scr="google_logo.png">
+            </div>
+            <form id="login" class="input_boxes">
+                <input type="text" placeholder="Email" class="input_field" id="emailforlogin">
+                <input type="password" placeholder="Password" class="input_field" id="paswordforlogin">
+                <input type="checkbox" class="check_box"> <span>Remember password</span>
+                <button type="submit" class="submit_button" id="signIn">Login</button>
+            </form>
+            <form id="register" class="input_boxes">
+                <input type="text" placeholder="Email" class="input_field" id="emailforregister"required>
+                <input type="password" placeholder="Password" class="input_field" id="passwordforreister"required>
+                <input type="checkbox" class="check_box"> <span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit_button">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script >
+        var login = document.getElementById("login");
+        var register = document.getElementById("register");
+        var slidingButton = document.getElementById("sliding_btn");
+
+        function register1(){
+            login.style.left = "-400px";
+            register.style.left = "50px";
+            slidingButton.style.left = "110px";
+        }
+
+        function login1(){
+            login.style.left = "50px";
+            register.style.left = "450px";
+            slidingButton.style.left = "0px";
+        }
+    </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+    <script  src="../../scripts/LogIn/login.js"></script>
+    
+
+</body>> 
+</html>
