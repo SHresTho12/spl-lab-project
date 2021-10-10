@@ -94,18 +94,24 @@ function initilizeDots() {
 }
 //setup the canvas
 function prepCanvas() {
-    var res = window.devicePixelRatio || 1, //resolution
-        scale = 1 / res;
+    var res = window.devicePixelRatio || 1, scale = 1 / res;//resolution
     data.canvas = document.getElementById('dots');
     data.ctx = data.canvas.getContext('2d');
-    data.canvas.width = window.innerWidth - 60;
-    data.canvas.height = 645;
+    // data.canvas.width = window.innerWidth - 60;
+    // data.canvas.height = 645;
+    data.canvas.width =window.innerWidth * scale;
+    data.canvas.height =645 * scale;
+    // data.canvas.style.width =window.innerWidth *scale + 'px';
+    // data.canvas.style.height = window.innerHeight * scale + 'px';
+    // console.log(data.canvas.height);
+    data.ctx.scale(res, res);
     data.canvas.addEventListener('mousedown', function (event) {
         console.log(event.clientX, event.clientY);
         checkForDot(event);
     });
 }
-//draws the dots on the scree
+
+//draws the dots on the screen
 function drawDots() {
     
     var i = 0;
