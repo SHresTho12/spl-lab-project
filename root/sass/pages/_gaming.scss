@@ -1,7 +1,12 @@
 .gaming-page-body{
-    background-image: linear-gradient(to right ,#7ed4f3,#9ddf97
-    );
+    // background-image: linear-gradient(to right ,#7ed4f3,#9ddf97
+    // );
     background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, 
+    $color-primary-light,
+    $color-primary),
+    url(../images/features-section.jpg);
+    background-size: cover;
 }
 .gaming-header{
     margin-bottom: 10px;

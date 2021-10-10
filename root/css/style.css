@@ -683,7 +683,7 @@ button {
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1rem 2rem #e7914b; }
+    box-shadow: 0 1rem 2rem #68f05c; }
     .game-card-side-front {
       background-color: #fff; }
     .game-card-side-back {
@@ -801,6 +801,8 @@ button {
     width: calc(2 * ((100%-2 * 5rem) / 3) + 5rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 5rem) / 4); }
+  .row .col-1-of-5 {
+    width: calc((100% - 3 * 5rem) / 5); }
 
 .header {
   height: 95vh;
@@ -1082,8 +1084,9 @@ button {
     background-image: linear-gradient(45deg, #bef0ce 20%, #95ecc8 100%); }
 
 .gaming-page-body {
-  background-image: linear-gradient(to right, #7ed4f3, #9ddf97);
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485b6), url(../images/features-section.jpg);
+  background-size: cover; }
 
 .gaming-header {
   margin-bottom: 10px; }
@@ -1139,7 +1142,7 @@ button {
     font-weight: 200; }
 
 .voiceQuizBody {
-  background-image: linear-gradient(45deg, #8adb7cc2 20%, #108ad1b6 100%);
+  background-image: linear-gradient(45deg, #8adb7cc2 20%, #63c98eb6 100%);
   min-height: 100vh;
   color: #ffff;
   display: flex;
