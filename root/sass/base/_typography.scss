@@ -132,11 +132,16 @@ body {
 
 //Design for memory game title
 .game-title {
-    color: yellow;
     font-family:cursive;
     font-weight: normal;
     text-align: center;
-    font-size: 6em;
+    font-size: 5em;
+    background-color: rgba(71, 197, 77, .75);
+  padding: 8px;
+  border-radius: 4px;
+  margin: 0 0 40px;
+  color: #f5f78e;
+  box-shadow: 5px 10px 18px rgb(6, 190, 104);
 }
 
 
