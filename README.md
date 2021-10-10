@@ -1,6 +1,6 @@
 # SPL-1 Project
 ## TEACH ME 
-> This a small learning project for children under the age of 10. Our project provides different ways of learning and test one topic. So every children can learn eassily and effectively.
+> This a small learning project for children under the age of 10. Our project provides different ways of learning and test one topic. So every children can learn easily and effectively.
 > Live demo 
 
 ## Table of Contents
@@ -48,16 +48,27 @@ List the ready features here:
 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
+Requirements : 
+- node.js 
+- sass
+You can set up this project in any computer . 
+# Steps : 
+- git clone https://github.com/SHresTho12/spl-lab-project
+After cloning the repo
+- cd spl-lab-project/root
+- npm init
+- npm install
+All packages will be installed
+# For the sass designs to work :
+- cd sass
+- npm run compile:sass
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
+- For children who can not learn in normal typical methods
+- For visual interaction
+- For learning with practice
 
-`write-your-code-here`
 
 
 ## Project Status
@@ -65,21 +76,21 @@ Project is: _in progress_
 This project is ever evolving . Theres always new ways for learning.
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Data Collection 
+- Evaluation of the scores
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Develop a score system
+- Evaluate all scores and develop a evaluation system.
 
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
+- Home page is inspired by Jonas Schmedtman.
+- This project was intended for children of special needs.
 - Many thanks to...
 
 
