@@ -2,6 +2,8 @@ var score = 0;
 var level_count = 1;
 var total_level = 8;
 
+const hintBtn = document.getElementById('hint_btn');
+
 const letters = document.querySelectorAll('.letter');
 const boxes = document.querySelectorAll('.box');
 var arr = [];
@@ -20,21 +22,36 @@ const tree_boxes = document.querySelector('.boxes_tree').children;
 const mug_boxes = document.querySelector('.boxes_mug').children;
 const cupcake_boxes = document.querySelector('.boxes_cupcake').children;
 const books_boxes = document.querySelector('.boxes_books').children;
-var yay = new Audio('yay.mp3');
-var oops = new Audio('oops.mp3');
 
 const apple_letters = document.querySelector('.draggables_apple').children;
+const orange_letters = document.querySelector('.draggables_orange').children;
+const car_letters = document.querySelector('.draggables_car').children;
+const rose_letters = document.querySelector('.draggables_rose').children;
+const tree_letters = document.querySelector('.draggables_tree').children;
+const mug_letters = document.querySelector('.draggables_mug').children;
+const cupcake_letters = document.querySelector('.draggables_cupcake').children;
+const books_letters = document.querySelector('.draggables_books').children;
+
+var yay = new Audio('yay.mp3');
+var yay2 = new Audio('goodjob.mp3');
+var yay3 = new Audio('welldone.mp3');
+var oops = new Audio('oops.mp3');
+
+function lettersPlaced(e, count){
+    if(count < e.length){
+        var lettersPlaced = 0;
+        for(var i=0; i<e.length; i++){
+            if(e[i].hasChildNodes()) lettersPlaced++;
+        }
+        if(lettersPlaced < e.length)
+            alert("please fill all the boxes");
+    }
+}
+
 
 function checkSpellingApple(e){ 
     var count = 0;
-    
-    // if(count < apple_boxes.length){
-    //     console.log("sorry, you have to spell the word.");
-    //     console.log("number of letters "+count);
-    // }
-
-    //else 
-    {
+    lettersPlaced(apple_boxes, count);
     
     for (let i = 0; i < apple_boxes.length; i++) 
     {
@@ -64,12 +81,11 @@ function checkSpellingApple(e){
         document.getElementById('apple').src = "image/sorry.gif";
         alert("wrong spelling!! please retry.");
     }
-    }
 }
 
 function checkSpellingOrange(e){
     var count = 0; 
-    
+    lettersPlaced(orange_boxes, count);
         for (let i = 0; i < orange_boxes.length; i++) {
             var box_id = orange_boxes[i].id;
             var item_id = orange_boxes[i].firstChild.id;
@@ -85,7 +101,7 @@ function checkSpellingOrange(e){
         if(count === orange_boxes.length){
             console.log(count);
             score = score + 5;
-            yay.play();
+            yay2.play();
             document.getElementById("orange").src = "image/goodjob.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -97,7 +113,7 @@ function checkSpellingOrange(e){
 }
 function checkSpellingCar(e){//someting's wrong here
     var count = 0; 
-    
+    lettersPlaced(car_boxes, count);
         for (let i = 0; i < car_boxes.length; i++) {
             var box_id = car_boxes[i].id;
             var item_id = car_boxes[i].firstChild.id;
@@ -110,7 +126,7 @@ function checkSpellingCar(e){//someting's wrong here
         if(count === car_boxes.length){
             console.log(count);
             score = score + 5;
-            yay.play();
+            yay3.play();
             document.getElementById("car").src = "image/goodjob3.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -122,7 +138,7 @@ function checkSpellingCar(e){//someting's wrong here
 }
 function checkSpellingRose(e){
     var count = 0; 
-
+    lettersPlaced(rose_boxes, count);
         for (let i = 0; i < rose_boxes.length; i++) {
             var box_id = rose_boxes[i].id;
             var item_id = rose_boxes[i].firstChild.id;
@@ -148,7 +164,7 @@ function checkSpellingRose(e){
 }
 function checkSpellingTree(e){
     var count = 0; 
-    
+    lettersPlaced(tree_boxes, count);
         for (let i = 0; i < tree_boxes.length; i++) {
             var box_id = tree_boxes[i].id;
             var item_id = tree_boxes[i].firstChild.id;
@@ -162,7 +178,7 @@ function checkSpellingTree(e){
         if(count === tree_boxes.length){
             console.log(count);
             score = score + 5;
-            yay.play();
+            yay2.play();
             document.getElementById("tree").src = "image/goodjob.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -174,7 +190,7 @@ function checkSpellingTree(e){
 }
 function checkSpellingMug(e){
     var count = 0; 
-    
+    lettersPlaced(mug_boxes, count);
         for (let i = 0; i < mug_boxes.length; i++) {
             var box_id = mug_boxes[i].id;
             var item_id = mug_boxes[i].firstChild.id;
@@ -187,7 +203,7 @@ function checkSpellingMug(e){
         if(count === mug_boxes.length){
             console.log(count);
             score = score + 5;
-            yay.play();
+            yay3.play();
             document.getElementById("mug").src = "image/goodjob2.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -199,7 +215,7 @@ function checkSpellingMug(e){
 }
 function checkSpellingCupcake(e){
     var count = 0; 
-    
+    lettersPlaced(cupcake_boxes, count);
         for (let i = 0; i < cupcake_boxes.length; i++) {
             var box_id = cupcake_boxes[i].id;
             var item_id = cupcake_boxes[i].firstChild.id;
@@ -227,20 +243,20 @@ function checkSpellingCupcake(e){
 }
 function checkSpellingBooks(e){
     var count = 0; 
-    
+    lettersPlaced(books_boxes, count);
         for (let i = 0; i < books_boxes.length; i++) {
             var box_id = books_boxes[i].id;
             var item_id = books_boxes[i].firstChild.id;
             
             if((box_id === "o" && item_id === "books_o1") || (box_id === "o" && item_id === "books_o2")) count++;
-            if(box_id === "r" && item_id === "books_b") count++;
-            if(box_id === "a" && item_id === "books_k") count++;
-            if(box_id === "n" && item_id === "books_s") count++;
+            if(box_id === "b" && item_id === "books_b") count++;
+            if(box_id === "k" && item_id === "books_k") count++;
+            if(box_id === "s" && item_id === "books_s") count++;
             console.log(count);
         }
         if(count === books_boxes.length){
             console.log(count);
-            yay.play();
+            yay2.play();
             score = score + 5;
             document.getElementById("books").src = "image/goodjob4.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
@@ -276,15 +292,56 @@ function resetCurrentWord(e){
 
 function showHint(){
     console.log("hint btn clicked");
+    
     if(level_count === 1){//apple
         apple_boxes[0].appendChild(apple_letters[4]);
         apple_boxes[4].appendChild(apple_letters[2]);
+        hintBtn.disabled = true;
     } 
+
+    if(level_count === 2){//orange
+        orange_boxes[0].appendChild(orange_letters[1]);
+        orange_boxes[1].appendChild(orange_letters[4]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 3){//car
+        car_boxes[2].appendChild(car_letters[2]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 4){//rose
+        rose_boxes[1].appendChild(rose_letters[1]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 5){//tree
+        tree_boxes[3].appendChild(tree_letters[3]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 6){//mug
+        mug_boxes[0].appendChild(mug_letters[2]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 7){//cupcake
+        cupcake_boxes[0].appendChild(cupcake_letters[3]);
+        cupcake_boxes[3].appendChild(cupcake_letters[5]);
+        hintBtn.disabled = true;
+    }
+
+    if(level_count === 8){//books
+        books_boxes[0].appendChild(books_letters[2]);
+        books_boxes[4].appendChild(books_letters[3]);
+        hintBtn.disabled = true;
+    }
 }
 
 function goToNextLevel(){
     // if (done_button_clicked){
         while(level_count < total_level){
+            hintBtn.disabled = false;
             if(level_count === 1){
                 document.querySelector('.apple_game').style.display = "none";
                 document.querySelector('.orange_game').style.display = "block";
