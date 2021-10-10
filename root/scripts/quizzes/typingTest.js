@@ -7,6 +7,7 @@ const settingsBtn = document.getElementById('typing-settings-btn');
 const settings = document.getElementById('typing-settings');
 const settingsForm = document.getElementById('typing-settings-form');
 const difficultySelect = document.getElementById('difficulty');
+const startBtn = document.getElementById('start-btn');
 
 // List of words for game
 const words = [
@@ -57,8 +58,33 @@ difficultySelect.value =
 text.focus();
 
 // Start counting down
-const timeInterval = setInterval(updateTime, 1000);
+let timeInterval ;
+startBtn.addEventListener("click",function(){
+  timeInterval = setInterval(updateTime, 1000);
+  text.value = "";
+  // Typing
+text.addEventListener('input', e => {
+  const insertedText = e.target.value;
 
+  if (insertedText === randomWord) {
+    addWordToDOM();
+    updateScore();
+
+    // Clear
+    e.target.value = '';
+
+    if (difficulty === 'hard') {
+      time += 2;
+    } else if (difficulty === 'medium') {
+      time += 3;
+    } else {
+      time += 5;
+    }
+
+    updateTime();
+  }
+});
+})
 // Generate random word from array
 function getRandomWord() {
   return words[Math.floor(Math.random() * words.length)];
@@ -103,28 +129,7 @@ addWordToDOM();
 
 // Event listeners
 
-// Typing
-text.addEventListener('input', e => {
-  const insertedText = e.target.value;
 
-  if (insertedText === randomWord) {
-    addWordToDOM();
-    updateScore();
-
-    // Clear
-    e.target.value = '';
-
-    if (difficulty === 'hard') {
-      time += 2;
-    } else if (difficulty === 'medium') {
-      time += 3;
-    } else {
-      time += 5;
-    }
-
-    updateTime();
-  }
-});
 
 // Settings btn click
 settingsBtn.addEventListener('click', () => settings.classList.toggle('settings-hide'));
