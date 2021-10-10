@@ -5,7 +5,7 @@ body{
     overflow: hidden;
     background: rgb(221, 205, 205);
     position: absolute;
-   /* background-image: url(../images/ConnectDotsGame/dotsGameBg2.jpg); */
+    background-image: url(../images/ConnectDotsGame/bg.png);
 }
 .dotsCanvas{
     box-shadow: -3px 2px 9px 6px black;
@@ -61,10 +61,10 @@ body{
 }
 .score_container{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     flex-direction: row;
     font-family: 'Courier New', Courier, monospace;
-    color:#0c4ec9;
+    color:#01962e;
 }
 .dotsButton{
     margin: 10px;
@@ -84,4 +84,14 @@ z-index: 10;
 font-size: 300px;
 color:#ffb900;
 
+}
+.dotsHeading{
+   
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(32, 5, 133);
+    
+   
 }
