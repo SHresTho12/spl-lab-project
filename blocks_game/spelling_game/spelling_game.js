@@ -305,9 +305,6 @@ function resetCurrentWord(e){
     }
 
 }
-function checkSpellingRose(e){
-    var count = 0; 
-
 
 function showHint(){
     console.log("hint btn clicked");
@@ -461,3 +458,4 @@ function drop(e) {
     // display the draggable element
     draggable.classList.remove('hide');
 }
+
