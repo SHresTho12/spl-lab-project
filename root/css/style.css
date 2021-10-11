@@ -1145,6 +1145,12 @@ button {
     color: #141414;
     font-weight: 200; }
 
+#difficulty {
+  width: 200px;
+  height: 50px;
+  color: Blue;
+  font-size: 2rem; }
+
 .voiceQuizBody {
   background-image: linear-gradient(45deg, #8adb7cc2 20%, #10d161b6 100%);
   min-height: 100vh;
