@@ -18,9 +18,10 @@
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
+- “Developing an easy-to-use, interactive online learning platform for children with Autism Spectrum Disorder (ASD) along with some treatment exercises to make learning efficient.”
+- What problem does it (intend to) solve? To make learning easier for children with ASD.
+- What is the purpose of your project? Learning for children with ASD can be challenging with attention deficit and concentration problem.
+That's why we intend to make this platform as interactive as possible with simple interface to hold the attention of the children.
 - Why did you undertake it?
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -39,7 +40,7 @@ List the ready features here:
 - Different ways of learning same topic
 - Learning through game
 - Simple quiz for test
-- Eassy to use interface
+- Easy to use interface
 
 
 ## Screenshots
