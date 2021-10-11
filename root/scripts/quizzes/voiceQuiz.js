@@ -1,6 +1,7 @@
 const msgElement = document.getElementById('msg');
 const startBtn = document.getElementById('voice-record');
 const randomNum = getRandomNumber();
+
     //
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -18,7 +19,7 @@ startBtn.addEventListener("click",function(){
 function onSpeak(e){
    const msg = e.results[0][0].transcript;
 
-   writeMessage(msg);
+   //writeMessage(msg);
    checkNumber(msg);
    console.log(msg);
 }
@@ -27,6 +28,7 @@ function onSpeak(e){
 //Write the result on the webpage
 
 function writeMessage(msg){
+  msgElement.innerHTML="";
     msgElement.innerHTML= `
     <div class="numberGuess">You Said :</div>
     <span class="guessBox">${msg}</span>
@@ -45,26 +47,35 @@ function checkNumber(msg) {
   
     // Check if valid number
     if (Number.isNaN(num)) {
+      msgElement.innerHTML="";
       msgElement.innerHTML += '<div class="Guess Guess-Wrong">That is not a valid number</div>';
       return;
     }
   
     // Check in range
     if (num > 100 || num < 1) {
+      writeMessage(msg);
+      
       msgElement.innerHTML += '<div class="Guess Guess-Wrong">Number must be between 1 and 100</div>';
       return;
     }
   
     // Check number
     if (num === randomNum) {
+      writeMessage(msg);
+      
       document.body.innerHTML = `
         <h2 class="Guess Guess-Right">Congrats! You have guessed the number! <br><br>
         It was ${num}</h2>
         <button class="voice-play-again" id="play-again">Play Again</button>
       `;
     } else if (num > randomNum) {
+      writeMessage(msg);
+      
       msgElement.innerHTML += '<div class="Guess Guess-Wrong">GO LOWER</div>';
     } else {
+      writeMessage(msg);
+     
       msgElement.innerHTML += '<div class="Guess Guess-Wrong">GO HIGHER</div>';
     }
   }
@@ -87,3 +98,5 @@ document.body.addEventListener('click', e => {
     window.location.reload();
   }
 });
+
+

@@ -1160,3 +1160,8 @@ button {
 .micImage {
   width: auto;
   height: auto; }
+
+.buttons-recording {
+  position: absolute;
+  left: 10%;
+  align-items: center; }
