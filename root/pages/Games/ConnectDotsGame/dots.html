@@ -2,39 +2,44 @@
 <html>
 
 <head>
-    <title>Connecting Dots</title>
-
+    <title class="gameTitle">Connecting Dots</title>
+    <link rel="stylesheet" href="../../../css/dotsCss.css">
 </head>
 
-<body background="../../../images/ConnectDotsGame/background1.jpg" bgproperties="fixed" style="background-size:cover">
+<body class="dotsBody" background="../../../images/ConnectDotsGame/dotsGameBg.jpg">
+  
 
-    <canvas id="dots" width="400" height="300"></canvas>
+
+    <h1 class="dotsHeading">Connect The Dots</h1>
+ 
+       <canvas id="dots"></canvas>
+       <h1  class="scoreBar">Score :<span id = "score">00</span></h1>
+       <h1 class="hint" id="hintText"></h1>
     <!--canvas element-->
-    <button onclick="prepCanvas(); drawDots();">Start game </button>
-
-    <script type="text/javascript" src="dots.js"></script>
-
-
-    <button onclick="displayLetter('../../../images/ConnectDotsGame/A.jpg', 150, 200);">Hint</button>
-    <script type="text/javascript" src="../../../scripts/Games/ConnectDotsGame/dots.js"></script>
-    <a href="../ConnectDotsGame/dots.html"><button>Go back</button> </a>
+    <section class="buttons">
+        <button class="pushable" id="strt"><span class="front">
+        Start
+      </span> </button>
+    <button class="pushable"  id="check"><span class="front">
+        Check
+      </span></button>
+   <button class="pushable" id="nextButton"><span class="front">
+    Next
+  </span></button>
+    <a href="../ConnectDotsGame/dots.html"><button class="pushable" ><span class="front">
+        Reload
+      </span></button> </a>
     <br>
+    </section>
+    
 
     <audio src="music.mp3" autoplay>
 
 </audio>
 
-    <p> Instructions!
-        <br> Click on the dots one after another to join them in order to form the required shape. <br> Clicking on the canvas will remove the connection</p>
-
-    <p style="text-align: right;
-    font-weight: bolder;
-    font-size:xx-large;
-    font-family: 'MV Boli' ;">
-        CONNECT THE DOTS
-        <br>GAME
-    </p>
-
+      
+    
+    <script type="text/javascript" src="../../../dist/dots.js"></script>
 </body>
 
 </html>

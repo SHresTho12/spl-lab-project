@@ -100,31 +100,40 @@
     //hint button in the card Game
     .hints-button{
 
-        .pushable {
-            background-color: brown;
-            border-radius: 50px;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            outline-offset: 4px;
-          }
-          .front {
-            display: block;
-            padding: 12px 42px;
-            border-radius: 50px;
-            font-size: 1.25rem;
-            background-color: rgb(133, 28, 28);
-            color: white;
-            transform: translateY(-6px);
-          }
+       
         
           .pushable:active .front {
             transform: translateY(-2px);
           }
+          
+         .pushable {background-image: linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%)}
+         .pushable {
+            margin: 20px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: rgb(25, 15, 161);            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            font-weight: 700;
+          }
+
+          .pushable:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
 
     }
 
-
+    
+    
+    
+    
 
     //buttons for games and quizzes
     
@@ -254,3 +263,76 @@
         bottom: 3rem;
         left: 3rem;
       }
+
+
+
+
+      //Typing game Reload
+     
+        
+        .typingGameReload{background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%)}
+        .typingGameReload {
+           margin: 10px;
+           padding: 15px 45px;
+           text-align: center;
+           text-transform: uppercase;
+           transition: 0.5s;
+           background-size: 200% auto;
+           color: white;            
+           box-shadow: 0 0 20px #eee;
+           border-radius: 10px;
+           display: block;
+         }
+
+         .typingGameReload:hover {
+           background-position: right center; /* change the direction of the change here */
+           color: #fff;
+           text-decoration: none;
+         }
+        
+      //voice game button style
+      
+      
+      .voice-play-again {background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5  51%, #00d2ff  100%)}
+      .voice-play-again {
+         margin: 10px;
+         padding: 15px 45px;
+         text-align: center;
+         text-transform: uppercase;
+         transition: 0.5s;
+         background-size: 200% auto;
+         color: white;            
+         box-shadow: 0 0 20px #eee;
+         border-radius: 10px;
+         display: block;
+       }
+
+       .voice-play-again:hover {
+         background-position: right center; /* change the direction of the change here */
+         color: #fff;
+         text-decoration: none;
+       }
+      
+       //Recording start Button
+       
+       .voice-record {background-image: linear-gradient(to right, #457fca 0%, #5691c8  51%, #457fca  100%)}
+       .voice-record {
+          margin: 10px;
+          padding: 15px 45px;
+          text-align: center;
+          text-transform: uppercase;
+          transition: 0.5s;
+          background-size: 200% auto;
+          color: white;            
+          box-shadow: 0 0 20px #eee;
+          border-radius: 10px;
+          display: block;
+        }
+
+        .voice-record:hover {
+          background-position: right center; /* change the direction of the change here */
+          color: #fff;
+          text-decoration: none;
+        }
+       
+      
