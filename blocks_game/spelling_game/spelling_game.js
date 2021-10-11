@@ -187,7 +187,7 @@ function checkSpellingTree(e){
             if(box_id === "t" && item_id === "tree_t") count++;
             if(box_id === "r" && item_id === "tree_r") count++;
             if((box_id === "e" && item_id === "tree_e1") || (box_id === "e" && item_id === "tree_e2")) count++;
-            //if(box_id === "e" && item_id === "tree_e1") count++;
+            
             console.log(count);
         }
         if(count === tree_boxes.length){
@@ -305,9 +305,6 @@ function resetCurrentWord(e){
     }
 
 }
-function checkSpellingRose(e){
-    var count = 0; 
-
 
 function showHint(){
     console.log("hint btn clicked");
@@ -461,3 +458,4 @@ function drop(e) {
     // display the draggable element
     draggable.classList.remove('hide');
 }
+
