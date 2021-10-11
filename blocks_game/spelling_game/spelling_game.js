@@ -172,7 +172,7 @@ function checkSpellingTree(e){
             if(box_id === "t" && item_id === "tree_t") count++;
             if(box_id === "r" && item_id === "tree_r") count++;
             if((box_id === "e" && item_id === "tree_e1") || (box_id === "e" && item_id === "tree_e2")) count++;
-            //if(box_id === "e" && item_id === "tree_e1") count++;
+            
             console.log(count);
         }
         if(count === tree_boxes.length){
