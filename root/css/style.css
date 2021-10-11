@@ -710,6 +710,10 @@ button {
       background-image: linear-gradient(to right bottom, #7ed56fc2, #28b485), url(../images/GamingPage/memoryCardGame.jpg); }
     .game-card__picture--3 {
       background-image: url(../images/GamingPage/connectDots.jpg); }
+    .game-card__picture--4 {
+      background-image: url(../images/GamingPage/number.jpeg); }
+    .game-card__picture--5 {
+      background-image: url(../images/GamingPage/spelling.jpeg); }
   .game-card__heading {
     font-size: 2.8rem;
     font-weight: 300;

@@ -81,8 +81,7 @@ body{
 } */
 .hint{
 position: absolute;
-right: 5%;
-left:90%;
+left:80%;
 top:5%;
 z-index: 10;
 font-size: 300px;
