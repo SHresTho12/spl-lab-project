@@ -19,9 +19,11 @@
 
 ## General Information
 - “Developing an easy-to-use, interactive online learning platform for children with Autism Spectrum Disorder (ASD) along with some treatment exercises to make learning efficient.”
-- What problem does it (intend to) solve? To make learning easier for children with ASD.
-- What is the purpose of your project? Learning for children with ASD can be challenging with attention deficit and concentration problem.
-That's why we intend to make this platform as interactive as possible with simple interface to hold the attention of the children.
+- What problem does it (intend to) solve?
+  - To make learning easier for children with ASD.
+- What is the purpose of your project? 
+  - Learning for children with ASD can be challenging with attention deficit and concentration problem.
+  That's why we intend to make this platform as interactive as possible with simple interface to hold the attention of the children.
 - Why did you undertake it?
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -49,20 +51,20 @@ List the ready features here:
 
 
 ## Setup
-Requirements : 
+#Requirements : 
 - node.js 
 - sass
-You can set up this project in any computer . 
+  -You can set up this project in any computer . 
 # Steps : 
 - git clone https://github.com/SHresTho12/spl-lab-project
-After cloning the repo
-- cd spl-lab-project/root
-- npm init
-- npm install
-All packages will be installed
+  -After cloning the repo
+- "cd spl-lab-project/root"
+- "npm init"
+- "npm install"
+  -All packages will be installed
 # For the sass designs to work :
-- cd sass
-- npm run compile:sass
+- "cd sass"
+- "npm run compile:sass"
 
 
 ## Usage
