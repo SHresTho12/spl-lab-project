@@ -66,15 +66,16 @@ h1 {
 .banner {
     /* background-color: #13274F; */
     background-color: #024b30;
-    width: 2550px;
-    height: 150px;
+    height: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .title {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+    font-size: 4rem;
+    color: aliceblue;
+
 }
 
 .video-heading {
