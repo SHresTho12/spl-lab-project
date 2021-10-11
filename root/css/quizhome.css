@@ -18,6 +18,7 @@ body {
     margin-left: 5rem auto;
     margin-right: 10rem auto;
     max-width: calc(100% - 80px);
+   
 }
 
 .article-container {
@@ -50,6 +51,7 @@ body {
     border-radius: 20px;
     transition: 0.3s;
     float: left;
+    margin-right: 3rem;
 }
 
 .article-card:hover {
@@ -63,13 +65,14 @@ body {
 }
 
 .article-content .card-category {
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 600;
-    color: #6b82a7;
+    font-weight: 800;
+    color: #2e0fdb;
     display: block;
     text-decoration: none;
+    background-color: azure;
 }
 
 .article-content .card-title {
@@ -85,9 +88,9 @@ body {
 }
 
 .banner {
-    background-color: #024b30;
-    width: 2550px;
-    height: 150px;
+   
+    
+    text-align: center;
 }
 
 .title {
