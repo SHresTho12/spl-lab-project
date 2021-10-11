@@ -30,12 +30,16 @@
         </div>
       </form>
     </div>
-
+    <div class ="gameInfo">
+    <h2 class="typing-name">👩‍💻 Speed Typer 👨‍💻</h2>
+    <p class="time-container">Time left: <span id="time">10s</span></p>
+    <p class="score-container">Score: <span id="score">0</span></p>
+    </div>
     <div class="typing-word-container">
-      <h2 class="typing-name">👩‍💻 Speed Typer 👨‍💻</h2>
+      
       <small>Type the following:</small>
 
-      <h1 id="word"></h1>
+      <h1 id="word" class ="desiredWord"></h1>
 
       <input
         type="text"
@@ -45,9 +49,9 @@
         placeholder="Type the word here..."
       />
 
-      <p class="time-container">Time left: <span id="time">10s</span></p>
+      <div><button class="typingGameReload " id="start-btn">Start</button></div>
 
-      <p class="score-container">Score: <span id="score">0</span></p>
+      
 
       <div id="end-game-container" class="end-game-container"></div>
     </div>

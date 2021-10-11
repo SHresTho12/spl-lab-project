@@ -16,7 +16,7 @@
         backface-visibility: hidden;
         border-radius: 3px;
         overflow: hidden;
-        box-shadow: 0 1rem 2rem rgb(239, 160, 50) ;
+        box-shadow: 0 1rem 2rem rgb(104, 240, 92) ;
 
         &-front{
             background-color: $primary-white;
@@ -66,6 +66,14 @@
         &--3{
             background-image:
              url(../images/GamingPage/connectDots.jpg);
+        }
+        &--4{
+            background-image:
+             url(../images/GamingPage/number.jpeg);
+        }
+        &--5{
+            background-image:
+             url(../images/GamingPage/spelling.jpeg);
         }
         
     }

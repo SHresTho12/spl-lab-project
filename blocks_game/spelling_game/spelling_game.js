@@ -2,7 +2,9 @@ var score = 0;
 var level_count = 1;
 var total_level = 8;
 
+
 const hintBtn = document.getElementById('hint_btn');
+
 
 const letters = document.querySelectorAll('.letter');
 const boxes = document.querySelectorAll('.box');
@@ -22,6 +24,7 @@ const tree_boxes = document.querySelector('.boxes_tree').children;
 const mug_boxes = document.querySelector('.boxes_mug').children;
 const cupcake_boxes = document.querySelector('.boxes_cupcake').children;
 const books_boxes = document.querySelector('.boxes_books').children;
+
 
 const apple_letters = document.querySelector('.draggables_apple').children;
 const orange_letters = document.querySelector('.draggables_orange').children;
@@ -52,6 +55,7 @@ function lettersPlaced(e, count){
 function checkSpellingApple(e){ 
     var count = 0;
     lettersPlaced(apple_boxes, count);
+
     
     for (let i = 0; i < apple_boxes.length; i++) 
     {
@@ -81,11 +85,15 @@ function checkSpellingApple(e){
         document.getElementById('apple').src = "image/sorry.gif";
         alert("wrong spelling!! please retry.");
     }
+
+
 }
 
 function checkSpellingOrange(e){
     var count = 0; 
+
     lettersPlaced(orange_boxes, count);
+
         for (let i = 0; i < orange_boxes.length; i++) {
             var box_id = orange_boxes[i].id;
             var item_id = orange_boxes[i].firstChild.id;
@@ -101,7 +109,9 @@ function checkSpellingOrange(e){
         if(count === orange_boxes.length){
             console.log(count);
             score = score + 5;
+
             yay2.play();
+
             document.getElementById("orange").src = "image/goodjob.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -113,7 +123,9 @@ function checkSpellingOrange(e){
 }
 function checkSpellingCar(e){//someting's wrong here
     var count = 0; 
+
     lettersPlaced(car_boxes, count);
+
         for (let i = 0; i < car_boxes.length; i++) {
             var box_id = car_boxes[i].id;
             var item_id = car_boxes[i].firstChild.id;
@@ -126,7 +138,9 @@ function checkSpellingCar(e){//someting's wrong here
         if(count === car_boxes.length){
             console.log(count);
             score = score + 5;
+
             yay3.play();
+
             document.getElementById("car").src = "image/goodjob3.gif";
             document.getElementById("score").innerHTML = "current score: " + score;
         }
@@ -135,6 +149,7 @@ function checkSpellingCar(e){//someting's wrong here
             document.getElementById('car').src = "image/sorry.gif";
             alert("wrong spelling!! please retry.");
         }
+
 }
 function checkSpellingRose(e){
     var count = 0; 
@@ -288,7 +303,11 @@ function resetCurrentWord(e){
             boxes[i].innerHTML = " ";
         }
     }
+
 }
+function checkSpellingRose(e){
+    var count = 0; 
+
 
 function showHint(){
     console.log("hint btn clicked");
@@ -342,6 +361,7 @@ function goToNextLevel(){
     // if (done_button_clicked){
         while(level_count < total_level){
             hintBtn.disabled = false;
+
             if(level_count === 1){
                 document.querySelector('.apple_game').style.display = "none";
                 document.querySelector('.orange_game').style.display = "block";
